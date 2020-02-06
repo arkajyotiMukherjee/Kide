@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Page3 extends StatelessWidget {
-  final String _assets = 'lib/assets/Events_page_OnBoarding.jpg';
+  // final String _assets = 'lib/assets/Events_page_OnBoarding.jpg';
+  final String _assets = 'lib/assets/events_2.jpg';
+
   @override
   Widget build(BuildContext context) {
     return new Container(

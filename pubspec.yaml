@@ -40,6 +40,8 @@ dev_dependencies:
 flutter_icons:
   android: true
   image_path_android: lib/assets/Icon/kide_logoxxxhdpi.png
+  adaptive_icon_background: lib/assets/Icon/kide_logoxxxhdpi.png
+  adaptive_icon_foreground: lib/assets/Icon/kide_logoxxxhdpi.png
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -59,6 +61,9 @@ flutter:
    - ./lib/assets/Contacts_Page_OnBoarding.jpg
    - ./lib/assets/Events_Page_OnBoarding.jpg
    - ./lib/assets/Maps_Page_OnBoarding.jpg
+   - ./lib/assets/maps_1.jpg
+   - ./lib/assets/events_2.jpg
+   - ./lib/assets/Contactt_1.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
