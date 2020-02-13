@@ -9,6 +9,7 @@ import 'package:kide/providers/getEvents.dart';
 import 'package:kide/providers/bookmarks.dart';
 import 'package:kide/providers/getMarkers.dart';
 import 'package:kide/util/constants.dart';
+import 'package:kide/widgets/utils/stack_index.dart';
 import 'package:provider/provider.dart';
 import 'package:kide/pages/ContactsPage/Contacts.dart';
 import 'package:kide/pages/EventsPage/Events.dart';
@@ -18,6 +19,8 @@ import 'package:kide/pages/MapsPage/Maps.dart';
 import 'package:kide/pages/MorePage/More.dart';
 import 'package:kide/providers/router.dart';
 import 'package:kide/widgets/BottomNav.dart';
+
+import 'models/Destination.dart';
 
 
 class MyApp extends StatelessWidget {
@@ -43,7 +46,7 @@ class MyApp extends StatelessWidget {
         routes: {
           MapsPage.routeName:       (context) => MapsPage(),
           ContactsPage.routeName:   (context) => ContactsPage(),
-          HomePage.routeName:       (context) => HomePage(),
+          // HomePage.routeName:       (context) => HomePage(),
           EventsPage.routeName:     (context) => EventsPage(),
           MorePage.routeName:       (context) => MorePage(),
           ContactList.routeName:    (context) => ContactList(),
@@ -70,31 +73,60 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
+const List<Destination> allDestinations = <Destination>[
+  Destination('Home', Icons.home, Colors.teal),
+  Destination('Business', Icons.business, Colors.cyan),
+  Destination('School', Icons.school, Colors.orange),
+  Destination('Flight', Icons.flight, Colors.blue)
+];
+
 class _MyHomePageState extends State<MyHomePage> {
 
-  final List<Widget> _tabs = [
-    MapsPage(),
-    ContactsPage(),
-    HomePage(),
-    EventsPage(),
-    MorePage(),
-  ];
+  // final List<Widget> _tabs = [
+  //   MapsPage(),
+  //   ContactsPage(),
+  //   HomePage(),
+  //   EventsPage(),
+  //   MorePage(),
+  // ];
 
-  final List<String> _tabNames = [
-    MAPS,
-    CONTACTS,
-    HOME,
-    EVENTS,
-    MORE
-  ];
+  // final List<String> _tabNames = [
+  //   MAPS,
+  //   CONTACTS,
+  //   HOME,
+  //   EVENTS,
+  //   MORE
+  // ];
+
   
   @override
   Widget build(BuildContext context) {
-    
+    int _currentIndex = 0;
     final indexState = Provider.of<Router>(context);
 
     return Scaffold(
-      body: SplashScreen(),
+      // body: SplashScreen(),
+      body: IndexedStack(
+        index: _currentIndex,
+        children: allDestinations.map<Widget>((Destination destination) {
+          return DestinationView(destination: destination);
+        }
+      ).toList()),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: (int index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        items: allDestinations.map((Destination destination) {
+          return BottomNavigationBarItem(
+            icon: Icon(destination.icon),
+            backgroundColor: destination.color,
+            title: Text(destination.title)
+          );
+        }).toList(),
+      ),
     );
   }
 }
