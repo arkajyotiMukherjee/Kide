@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:kide/providers/router.dart';
 import 'package:kide/util/data.dart';
 import 'package:kide/util/constants.dart';
+import 'package:kide/widgets/BottomNav.dart';
 import 'package:kide/widgets/HeaderWidget.dart';
 import 'package:kide/pages/ContactsPage/widgets/EmergencyCard.dart';
 import 'package:kide/pages/ContactsPage/widgets/CategoryCard.dart';
 import 'package:kide/config/Viewport.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(ContactsPage());
 
@@ -17,6 +20,7 @@ List<StaggeredTile> _staggeredTiles = const <StaggeredTile>[
 ];
 
 class ContactsPage extends StatefulWidget {
+  static const String routeName = '/contacts';  
   @override
   _ContactsPageState createState() => _ContactsPageState();
 }
@@ -46,10 +50,29 @@ class _ContactsPageState extends State<ContactsPage> {
 
   @override
   Widget build(BuildContext context) {
+    
+    // BottomNav Listener
+    final indexState = Provider.of<Router>(context);
+    // for Nav Icons
+    indexState.setIndex(1);
+    
     // Offset _offset = Offset(0.95, 0.55);
     ViewPort().init(context);
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        titleSpacing: NavigationToolbar.kMiddleSpacing,
+        title: Text(
+          "Contacts",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            letterSpacing: 5,
+            fontFamily: 'Roboto',
+          ),
+        )
+      ),
       backgroundColor: Color.fromRGBO(18, 18, 18, 1.0),
+      bottomNavigationBar: BottomNav(),
       body : Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(

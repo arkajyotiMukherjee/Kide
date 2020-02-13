@@ -9,6 +9,13 @@ class BottomNav extends StatelessWidget {
   Widget build(BuildContext context) {
     final indexState = Provider.of<Router>(context);
     final int _currentIndex = indexState.bottomNavIndex;
+    final Map<int, String> routes = {
+      0: "/maps",
+      1: "/contacts",
+      2: "/home",
+      3: "/events",
+      4: "/more"
+    };
 
     return BottomNavigationBar(
       showSelectedLabels: true,
@@ -79,6 +86,7 @@ class BottomNav extends StatelessWidget {
       ],
       onTap: (index) {
         indexState.setIndex(index);
+        Navigator.of(context).pushNamed(routes[index]);
       },
     );
   }

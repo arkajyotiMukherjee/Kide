@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kide/SplashScreen.dart';
 import 'package:kide/pages/ContactsPage/ContactList.dart';
 import 'package:kide/pages/EventsPage/BookmarksPage.dart';
 import 'package:kide/pages/EventsPage/DetailsPage.dart';
@@ -32,20 +33,33 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: KIDE_L_CAPS,
-        theme: ThemeData.dark(),
+        theme: ThemeData.dark().copyWith(
+          pageTransitionsTheme: PageTransitionsTheme(builders: {
+            TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+            TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+          })
+        ),
         home: MyHomePage(title: KIDE_CAPS),
         routes: {
-          SubEvents.routeName: (context) => SubEvents(),
-          BookmarksPage.routeName: (context) => BookmarksPage(),
-          ContactList.routeName: (context) => ContactList(),
-          DetailsPage.routeName: (context) => DetailsPage(),
-          MoreDetails.routeName: (context) => MoreDetails(),
-          MoreHome.routeName: (context) => MoreHome(),
+          MapsPage.routeName:       (context) => MapsPage(),
+          ContactsPage.routeName:   (context) => ContactsPage(),
+          HomePage.routeName:       (context) => HomePage(),
+          EventsPage.routeName:     (context) => EventsPage(),
+          MorePage.routeName:       (context) => MorePage(),
+          ContactList.routeName:    (context) => ContactList(),
+          BookmarksPage.routeName:  (context) => BookmarksPage(),
+          SubEvents.routeName:      (context) => SubEvents(),
+          DetailsPage.routeName:    (context) => DetailsPage(),
+          MoreHome.routeName:       (context) => MoreHome(),
+          MoreDetails.routeName:    (context) => MoreDetails(),
         },
       ),
     );
   }
 }
+
+
+
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -80,20 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final indexState = Provider.of<Router>(context);
 
     return Scaffold(
-      appBar: indexState.bottomNavIndex != 0 ? AppBar(
-        title: Center(
-          child: Text(
-            _tabNames[indexState.bottomNavIndex],
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Roboto',
-            ),
-          )
-        ),
-      ): null,
-      backgroundColor: Color.fromRGBO(18, 18, 18, 1.0),
-      body: _tabs[indexState.bottomNavIndex],
-      bottomNavigationBar: BottomNav(),
+      body: SplashScreen(),
     );
   }
 }

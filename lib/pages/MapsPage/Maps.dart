@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:kide/pages/MapsPage/models/FilterCategory.dart';
 import 'package:kide/pages/MapsPage/widgets/SearchBar.dart';
+import 'package:kide/providers/router.dart';
+import 'package:kide/widgets/BottomNav.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:kide/pages/MapsPage/models/FilterCategories.dart';
@@ -12,6 +14,7 @@ import 'dart:math' as math;
 void main() => runApp(MapsPage());
 
 class MapsPage extends StatefulWidget {
+  static const String routeName = '/maps';  
   final String eventMarker;
   MapsPage({this.eventMarker});
   @override
@@ -153,7 +156,15 @@ class _MyAppState extends State<MapsPage> with TickerProviderStateMixin {
     if (_initialLoad) _markers = _getMarkers.markers['all'];
     _initialLoad = false;
 
+    
+    // BottomNav Listener
+    final indexState = Provider.of<Router>(context);
+    // for Nav Icons
+    indexState.setIndex(0);
+
     return Scaffold(
+      backgroundColor: Color.fromRGBO(18, 18, 18, 1.0),
+      bottomNavigationBar: BottomNav(),
       body: SafeArea(
         child: Stack(
           children: [
