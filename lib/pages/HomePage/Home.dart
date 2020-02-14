@@ -243,38 +243,46 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          //for
-          Text(games.elementAt(0).toUpperCase(),
-              style: TextStyle(color: Colors.white)),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              //for
-              children: <Widget>[
-                Text(hostels.elementAt(0).elementAt(0),
-                    style: TextStyle(color: Colors.white)),
-                Spacer(),
-                RaisedButton(
-                  child: Text(
-                    FIND_IN_MAPS,
-                    style: TextStyle(
-                        //fontWeight: FontWeight.,
-                        fontSize: 10),
-                  ),
-                  onPressed: () {
-                    print("Accomodation press");
-                    Navigator.of(context, rootNavigator: true).pop('dialog');
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                MapsPage(eventMarker: "campus_3")));
-                  },
-                ),
-              ],
+          for (int i = 0; i < games.length; i++)
+            Container(
+              child: Column(
+                children: <Widget>[
+                  Text(games.elementAt(i).toUpperCase(),
+                      style: TextStyle(color: Colors.white)),
+
+                  for (int j = 0; j < hostels.elementAt(i).length; j++)
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(hostels.elementAt(i).elementAt(j),
+                              style: TextStyle(color: Colors.white)),
+                          Spacer(),
+                          RaisedButton(
+                            child: Text(
+                              FIND_IN_MAPS,
+                              style: TextStyle(
+                                  //fontWeight: FontWeight.,
+                                  fontSize: 10),
+                            ),
+                            onPressed: () {
+                              print("Accomodation press");
+                              Navigator.of(context, rootNavigator: true)
+                                  .pop('dialog');
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          MapsPage(eventMarker: "campus_3")));
+                            },
+                          ),
+                        ],
+                      ),
+                    )
+                ],
+              ),
             ),
-          )
         ],
       ),
     );
