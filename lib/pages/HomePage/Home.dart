@@ -210,7 +210,9 @@ class _HomePageState extends State<HomePage> {
                                 "Search on Maps",
                                 style: TextStyle(color: Colors.white),
                               ),
-                              onPressed: () => {},
+                              onPressed: () {
+                                _goToMaps("gate_152");
+                              },
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               )),
@@ -235,6 +237,18 @@ class _HomePageState extends State<HomePage> {
                 ],
               ));
         });
+  }
+
+  void _goToMaps( String loc ){
+    Navigator.of(context, rootNavigator: true)
+        .pop('dialog');
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+      builder: (context) =>
+          MapsPage(eventMarker: loc)
+      )
+    );
   }
 
   _accomodationListItems(
