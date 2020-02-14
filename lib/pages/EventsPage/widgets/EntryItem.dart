@@ -3,6 +3,7 @@ import 'package:kide/pages/EventsPage/widgets/ExpansionTitle.dart';
 import 'package:kide/pages/EventsPage/DetailsPage.dart';
 import 'package:kide/models/SubEvent.dart';
 import 'package:flutter/material.dart';
+import 'package:kide/pages/MapsPage/Maps.dart';
 import 'package:kide/util/constants.dart';
 import 'package:provider/provider.dart';
 import 'package:kide/providers/bookmarks.dart';
@@ -151,9 +152,15 @@ class _EntryItemState extends State<EntryItem> {
                     RaisedButton(
                       onPressed: () {
                         print("register");
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MapsPage(eventMarker: widget.entry.location)
+                          )
+                        );
                       },
                       textColor: Color.fromRGBO(253, 42, 42, 1),
-                      child: const Text(REGISTER,
+                      child: const Text("Go to Maps",
                           style: TextStyle(fontSize: 10)),
                       color: Colors.white,
                       shape: RoundedRectangleBorder(
