@@ -16,10 +16,22 @@ import 'package:kide/models/EventDetail.dart';
   /// game wise acco
   /// no of partcpts m/f
   /// no of games
+  /// 
+
+class Accomodation {
+  final String name;
+  final String markerId;
+
+  Accomodation({
+    this.name,
+    this.markerId
+  });
+}
+
 class KheloIndia {
   final int totUniversities;
   final String food;
-  final Map<String, List<String>> gameAccomodations;
+  final Map<String, List<Accomodation>> gameAccomodations;
   final int totParticipants;
   final int totGames;
 

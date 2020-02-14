@@ -29,10 +29,30 @@ class _HomePageState extends State<HomePage> {
     totGames: 20,
     totParticipants: 1700,
     gameAccomodations: {
-      "Hockey": ["KP6", "KP7", "KP8"],
-      "Football": ["KP3", "KP17", "KP5"],
-      "Volleyball": ["KP13", "KP1", "KP15"],
-      "Cricket": ["KP6C", "KP9B", "KP9A"],
+      "Hockey": [
+        Accomodation(name: "KP6", markerId: "campus_3"),
+        Accomodation(name: "KP7", markerId: "gate_152"),
+        Accomodation(name: "KP6", markerId: "kp6"),
+        Accomodation(name: "KP6", markerId: "kp_6"),
+      ],
+      "Chess": [
+        Accomodation(name: "KP6", markerId: "kp_6"),
+      ],
+      "Football": [
+        Accomodation(name: "KP6", markerId: "kp_6"),
+        Accomodation(name: "KP6", markerId: "kp_6"),
+        Accomodation(name: "KP6", markerId: "kp_6"),
+      ],
+      "Cricket": [
+        Accomodation(name: "KP6", markerId: "kp_6"),
+        Accomodation(name: "KP6", markerId: "kp_6"),
+        Accomodation(name: "KP6", markerId: "kp_6"),
+        Accomodation(name: "KP6", markerId: "kp_6"),
+      ],
+      "Badminton": [
+        Accomodation(name: "KP6", markerId: "kp_6"),
+        Accomodation(name: "KP6", markerId: "kp_6"),
+      ],
     },
   );
 
@@ -41,93 +61,94 @@ class _HomePageState extends State<HomePage> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-              backgroundColor: Color(0xff222222),
-              titlePadding: EdgeInsets.fromLTRB(10.0, 10, 10, 2),
-              contentPadding: EdgeInsets.fromLTRB(5.0, 2, 5, 8),
-              title: Center(child: Text(university.toUpperCase())),
-              titleTextStyle: TextStyle(color: Colors.white, fontSize: 18),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              content: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Divider(
-                    indent: 0,
-                    endIndent: 0,
-                    color: Colors.blueAccent,
-                    thickness: 3,
-                  ),
-                  Flexible(
-                    child: SingleChildScrollView(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          HeaderWidget("Total Participants", 16, Colors.white),
-                          Divider(
-                            indent: ViewPort.screenWidth * 0.02,
-                            endIndent: ViewPort.screenWidth * 0.02,
-                            color: Colors.white38,
-                          ),
+            backgroundColor: Color(0xff222222),
+            titlePadding: EdgeInsets.fromLTRB(10.0, 10, 10, 2),
+            contentPadding: EdgeInsets.fromLTRB(5.0, 2, 5, 8),
+            title: Center(child: Text(university.toUpperCase())),
+            titleTextStyle: TextStyle(color: Colors.white, fontSize: 18),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Divider(
+                  indent: 0,
+                  endIndent: 0,
+                  color: Colors.blueAccent,
+                  thickness: 3,
+                ),
+                Flexible(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        HeaderWidget("Total Participants", 16, Colors.white),
+                        Divider(
+                          indent: ViewPort.screenWidth * 0.02,
+                          endIndent: ViewPort.screenWidth * 0.02,
+                          color: Colors.white38,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 0, 10, 12),
+                          child: HeaderWidget(
+                              overView.totalParticipants, 24, Colors.white),
+                        ),
+                        HeaderWidget(
+                            "Total Officials: ${overView.officials.length}",
+                            16,
+                            Colors.white),
+                        Divider(
+                          indent: ViewPort.screenWidth * 0.02,
+                          endIndent: ViewPort.screenWidth * 0.02,
+                          color: Colors.white38,
+                        ),
+                        for (int i = 0; i < overView.officials.length; i++)
                           Padding(
-                            padding: const EdgeInsets.fromLTRB(10, 0, 10, 12),
-                            child: HeaderWidget(
-                                overView.totalParticipants, 24, Colors.white),
-                          ),
-                          HeaderWidget(
-                              "Total Officials: ${overView.officials.length}",
-                              16,
-                              Colors.white),
-                          Divider(
-                            indent: ViewPort.screenWidth * 0.02,
-                            endIndent: ViewPort.screenWidth * 0.02,
-                            color: Colors.white38,
-                          ),
-                          for (int i = 0; i < overView.officials.length; i++)
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
-                              child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Row(children: <Widget>[
-                                      Icon(
-                                        Icons.bubble_chart,
-                                        color: Color.fromRGBO(0, 112, 240, 100),
-                                        size: 24.0,
-                                      ),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 8.0),
-                                        child: Text(
-                                          overView.officials[i].name,
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w400,
-                                              color: Colors.white70),
-                                        ),
-                                      ),
-                                    ]),
+                            padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
+                            child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Row(children: <Widget>[
+                                    Icon(
+                                      Icons.bubble_chart,
+                                      color: Color.fromRGBO(0, 112, 240, 100),
+                                      size: 24.0,
+                                    ),
                                     Padding(
-                                      padding: const EdgeInsets.fromLTRB(
-                                          32.0, 2, 0, 12),
+                                      padding:
+                                          const EdgeInsets.only(left: 8.0),
                                       child: Text(
-                                        overView.officials[i].designation,
+                                        overView.officials[i].name,
                                         textAlign: TextAlign.left,
                                         style: TextStyle(
                                             fontSize: 14,
-                                            fontWeight: FontWeight.w200,
+                                            fontWeight: FontWeight.w400,
                                             color: Colors.white70),
                                       ),
                                     ),
                                   ]),
-                            ),
-                        ],
-                      ),
+                                  Padding(
+                                    padding: const EdgeInsets.fromLTRB(
+                                        32.0, 2, 0, 12),
+                                    child: Text(
+                                      overView.officials[i].designation,
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w200,
+                                          color: Colors.white70),
+                                    ),
+                                  ),
+                                ]),
+                          ),
+                      ],
                     ),
                   ),
-                ],
-              ));
+                ),
+              ],
+            )
+          );
         });
   }
 
@@ -215,7 +236,8 @@ class _HomePageState extends State<HomePage> {
                               },
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
-                              )),
+                              )
+                            ),
                           Divider(
                             indent: ViewPort.screenWidth * 0.02,
                             endIndent: ViewPort.screenWidth * 0.02,
@@ -252,7 +274,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   _accomodationListItems(
-      Iterable<String> games, Iterable<List<String>> hostels) {
+      Iterable<String> games, Iterable<List<Accomodation>> hostels) {
     return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -261,8 +283,11 @@ class _HomePageState extends State<HomePage> {
             Container(
               child: Column(
                 children: <Widget>[
-                  Text(games.elementAt(i).toUpperCase(),
-                      style: TextStyle(color: Colors.white)),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 22.0),
+                    child: Text(games.elementAt(i).toUpperCase(),
+                        style: TextStyle(color: Colors.white)),
+                  ),
 
                   for (int j = 0; j < hostels.elementAt(i).length; j++)
                     Padding(
@@ -270,7 +295,7 @@ class _HomePageState extends State<HomePage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Text(hostels.elementAt(i).elementAt(j),
+                          Text(hostels.elementAt(i).elementAt(j).name,
                               style: TextStyle(color: Colors.white)),
                           Spacer(),
                           RaisedButton(
@@ -278,17 +303,21 @@ class _HomePageState extends State<HomePage> {
                               FIND_IN_MAPS,
                               style: TextStyle(
                                   //fontWeight: FontWeight.,
-                                  fontSize: 10),
+                                  fontSize: 8),
+                            ),
+                            color: Colors.blueAccent,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
                             ),
                             onPressed: () {
                               print("Accomodation press");
                               Navigator.of(context, rootNavigator: true)
                                   .pop('dialog');
-                              Navigator.push(
+                              Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          MapsPage(eventMarker: "campus_3")));
+                                          MapsPage(eventMarker: hostels.elementAt(i).elementAt(j).markerId)));
                             },
                           ),
                         ],
