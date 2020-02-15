@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kide/config/Viewport.dart';
+import 'package:kide/util/colors.dart';
 import 'package:kide/util/constants.dart';
 
 class Page2 extends StatelessWidget {
@@ -19,19 +20,25 @@ class Page2 extends StatelessWidget {
                   new Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(ONBOARDING_CONTACTS_HEADING,
-                      style: Theme.of(context).textTheme.display1.copyWith(color: Colors.blueAccent),
+                    softWrap: true,
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: MATERIAL_BLUE_ACCENT
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   ),
                   Image.asset(
                     CONTACT_ASSET_PNG,
                     height: ViewPort.screenHeight*0.4,
-                    // width: ViewPort.screenWidth*0.6,
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(12, 0, 12, 80),
                     child: Text(ONBOARDING_CONTACTS_DESC,
-                      style: Theme.of(context).textTheme.body1.copyWith(color: Colors.white70),
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: MATERIAL_WHITE_70
+                      ),
                       textAlign: TextAlign.left,
                     ),
                   )

@@ -1,4 +1,4 @@
-package com.example.kide
+package com.kiitdev.Kide
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:kide/config/Viewport.dart';
-import 'package:kide/pages/MapsPage/Maps.dart';
-import 'package:kide/providers/getMarkers.dart';
-import 'package:kide/providers/getEvents.dart';
-import 'package:kide/util/constants.dart';
-import 'package:kide/util/data.dart';
-import 'package:kide/widgets/HeaderWidget.dart';
+import 'package:Kide/config/Viewport.dart';
+import 'package:Kide/pages/MapsPage/Maps.dart';
+import 'package:Kide/providers/getMarkers.dart';
+import 'package:Kide/providers/getEvents.dart';
+import 'package:Kide/util/constants.dart';
+import 'package:Kide/util/data.dart';
+import 'package:Kide/widgets/HeaderWidget.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        HeaderWidget("Total Participants", 16, Colors.white),
+                        HeaderWidget(TOTAL_PARTICIPANTS, 16, Colors.white),
                         Divider(
                           indent: ViewPort.screenWidth * 0.02,
                           endIndent: ViewPort.screenWidth * 0.02,
@@ -120,6 +120,7 @@ class _HomePageState extends State<HomePage> {
                                           const EdgeInsets.only(left: 8.0),
                                       child: Text(
                                         overView.officials[i].name,
+                                        softWrap: true,
                                         textAlign: TextAlign.left,
                                         style: TextStyle(
                                             fontSize: 14,
@@ -160,7 +161,7 @@ class _HomePageState extends State<HomePage> {
               backgroundColor: Color(0xff222222),
               titlePadding: EdgeInsets.fromLTRB(10.0, 10, 10, 2),
               contentPadding: EdgeInsets.fromLTRB(5.0, 2, 5, 8),
-              title: Center(child: Text("Event Overview")),
+              title: Center(child: Text(EVENT_OVERVIEW)),
               titleTextStyle: TextStyle(color: Colors.white, fontSize: 18),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
@@ -178,7 +179,7 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          HeaderWidget("Total Games", 16, Colors.white),
+                          HeaderWidget(TOTAL_GAMES, 16, Colors.white),
                           Divider(
                             indent: ViewPort.screenWidth * 0.02,
                             endIndent: ViewPort.screenWidth * 0.02,
@@ -190,7 +191,7 @@ class _HomePageState extends State<HomePage> {
                                 "${event.totGames}", 24, Colors.white),
                           ),
                           HeaderWidget(
-                              "Total Participating Universities Univers",
+                              TOTAL_PARTICIPATING_UNIVERSITIES,
                               16,
                               Colors.white),
                           Divider(
@@ -217,7 +218,7 @@ class _HomePageState extends State<HomePage> {
                             child: HeaderWidget(
                                 "${event.totParticipants}", 24, Colors.white),
                           ),
-                          HeaderWidget("Food Stall", 16, Colors.white),
+                          HeaderWidget(FOOD_STALL, 16, Colors.white),
                           Divider(
                             indent: ViewPort.screenWidth * 0.02,
                             endIndent: ViewPort.screenWidth * 0.02,
@@ -228,7 +229,7 @@ class _HomePageState extends State<HomePage> {
                           RaisedButton(
                               color: Colors.blueAccent,
                               child: Text(
-                                "Search on Maps",
+                                SEARCH_ON_MAPS,
                                 style: TextStyle(color: Colors.white),
                               ),
                               onPressed: () {
@@ -243,7 +244,7 @@ class _HomePageState extends State<HomePage> {
                             endIndent: ViewPort.screenWidth * 0.02,
                             color: Colors.white38,
                           ),
-                          HeaderWidget("Accomodation", 16, Colors.white),
+                          HeaderWidget(ACCOMODATION, 16, Colors.white),
                           Divider(
                             indent: ViewPort.screenWidth * 0.02,
                             endIndent: ViewPort.screenWidth * 0.02,
@@ -302,7 +303,6 @@ class _HomePageState extends State<HomePage> {
                             child: Text(
                               FIND_IN_MAPS,
                               style: TextStyle(
-                                  //fontWeight: FontWeight.,
                                   fontSize: 8),
                             ),
                             color: Colors.blueAccent,
@@ -313,7 +313,7 @@ class _HomePageState extends State<HomePage> {
                               print("Accomodation press");
                               Navigator.of(context, rootNavigator: true)
                                   .pop('dialog');
-                              Navigator.pushReplacement(
+                              Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
@@ -347,11 +347,6 @@ class _HomePageState extends State<HomePage> {
     final _getEvents = Provider.of<GetEvents>(context);
     //for Events
     if (_getEvents.eventList.length == 0) _getEvents.setEvents();
-
-    bool _isButtonDisabled = true;
-    // void initState(){
-    //   _isButtonDisabled = true;
-    // }
 
     ViewPort().init(context);
 
@@ -390,7 +385,7 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.fromLTRB(28.0, 0, 28, 8),
                     child: RaisedButton(
                         color: Colors.orangeAccent,
-                        child: Text("Event Overview"),
+                        child: Text(EVENT_OVERVIEW),
                         onPressed: () => showEventDialog(context),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
@@ -501,7 +496,6 @@ class _HomePageState extends State<HomePage> {
                             ],
                           ),
                         ),
-
                         // ---- Sub Section -----------
                         Padding(
                           padding: const EdgeInsets.fromLTRB(16, 0, 8, 0),
@@ -634,7 +628,6 @@ class _HomePageState extends State<HomePage> {
                             ],
                           ),
                         ),
-
                         Container(height: 20),
                         // ---- Sub Section -----------
                         Padding(
