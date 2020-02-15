@@ -9,7 +9,6 @@ class Page3 extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: new Container(
-        //height: double.infinity,
         child: Stack(
           children: <Widget>[
             new Positioned.fill(
@@ -25,7 +24,6 @@ class Page3 extends StatelessWidget {
                   ),
                   Image.asset(
                     EVENTS_ASSET_PNG,
-                    // width: ViewPort.screenWidth*0.6,
                     height: ViewPort.screenHeight*0.4,
                   ),
                   Padding(

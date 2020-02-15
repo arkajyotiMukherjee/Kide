@@ -29,13 +29,13 @@ class _SearchBarState extends State<SearchBar> {
         setState(() {
           _isSearching = false;
           _searchText = "";
-          _headerText = "Places for You";
+          _headerText = PLACES_FOR_YOU;
         });
       } else {
         setState(() {
           _isSearching = true;
           _searchText = _searchQuery.text;
-          _headerText = "Search Results";
+          _headerText = SEARCH_RESULTS;
         });
       }
     });
@@ -45,7 +45,7 @@ class _SearchBarState extends State<SearchBar> {
   void initState() {
     super.initState();
     _isSearching = false;
-    _headerText = "Places for You";
+    _headerText = PLACES_FOR_YOU;
     _focus.addListener(_onFocusChange);
     // init();
   }
@@ -123,7 +123,7 @@ class _SearchBarState extends State<SearchBar> {
                     contentPadding: EdgeInsets.all(16.0),
                     fillColor: Colors.black,
                     filled: true,
-                    hintText: 'Search for a location',
+                    hintText: SEARCH_FOR_A_LOCATION,
                     prefixIcon: Icon(Icons.search),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
@@ -141,8 +141,6 @@ class _SearchBarState extends State<SearchBar> {
                       ),
                     ),
                   ),
-                  // onChanged: ,
-                  // onSubmitted: ,
                 ),
               ),
             ),

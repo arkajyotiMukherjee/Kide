@@ -1,11 +1,9 @@
 import 'package:Kide/config/Viewport.dart';
 import 'package:Kide/pages/EventsPage/widgets/ExpansionTitle.dart';
-import 'package:Kide/pages/EventsPage/DetailsPage.dart';
 import 'package:Kide/models/SubEvent.dart';
 import 'package:flutter/material.dart';
 import 'package:Kide/pages/MapsPage/Maps.dart';
 import 'package:Kide/util/constants.dart';
-import 'package:Kide/widgets/HeaderWidget.dart';
 import 'package:provider/provider.dart';
 import 'package:Kide/providers/bookmarks.dart';
 
@@ -129,24 +127,24 @@ class _EntryItemState extends State<EntryItem> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
                     
-                    FlatButton(
-                      onPressed: () {
-                        Navigator.pushNamed(
-                          context,
-                          // new MaterialPageRoute(
-                          //   builder: (context) =>
-                          //     new DetailsPage(widget.entry)
-                          // ),
-                          DetailsPage.routeName,
-                          arguments: widget.entry
-                        );
-                        // showDetailsDialog(context);
-                        print("details");
-                      },
-                      textColor: Colors.white,
-                      child:
-                          const Text(DETAILS, style: TextStyle(fontSize: 10)),
-                    ),
+                    // FlatButton(
+                    //   onPressed: () {
+                    //     Navigator.pushNamed(
+                    //       context,
+                    //       // new MaterialPageRoute(
+                    //       //   builder: (context) =>
+                    //       //     new DetailsPage(widget.entry)
+                    //       // ),
+                    //       DetailsPage.routeName,
+                    //       arguments: widget.entry
+                    //     );
+                    //     // showDetailsDialog(context);
+                    //     print("details");
+                    //   },
+                    //   textColor: Colors.white,
+                    //   child:
+                    //       const Text(DETAILS, style: TextStyle(fontSize: 10)),
+                    // ),
                     Container(
                       width: 16,
                     ),

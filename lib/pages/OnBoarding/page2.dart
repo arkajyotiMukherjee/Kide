@@ -26,7 +26,6 @@ class Page2 extends StatelessWidget {
                   Image.asset(
                     CONTACT_ASSET_PNG,
                     height: ViewPort.screenHeight*0.4,
-                    // width: ViewPort.screenWidth*0.6,
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(12, 0, 12, 80),

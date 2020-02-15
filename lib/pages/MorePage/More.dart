@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:Kide/util/data.dart';
-//import 'package:Kide/models/MoreDetails.dart';
 import 'package:Kide/pages/MorePage/Widgets/MoreCard.dart';
 void main() => runApp(MorePage());
 

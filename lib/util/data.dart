@@ -11,13 +11,6 @@ import 'package:Kide/models/SubEvent.dart';
 import 'package:flutter/material.dart';
 import 'package:Kide/models/EventDetail.dart';
 
- /// no of univs
-  /// food
-  /// game wise acco
-  /// no of partcpts m/f
-  /// no of games
-  /// 
-
 class Accomodation {
   final String name;
   final String markerId;
