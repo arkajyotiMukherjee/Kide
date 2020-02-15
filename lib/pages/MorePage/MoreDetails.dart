@@ -1,7 +1,7 @@
-import 'package:kide/config/Viewport.dart';
+import 'package:Kide/config/Viewport.dart';
 import 'package:flutter/material.dart';
-import 'package:kide/models/More.dart';
-import 'package:kide/widgets/HeaderWidget.dart';
+import 'package:Kide/models/More.dart';
+import 'package:Kide/widgets/HeaderWidget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MoreDetails extends StatelessWidget{

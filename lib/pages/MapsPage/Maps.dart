@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:kide/pages/MapsPage/models/FilterCategory.dart';
-import 'package:kide/pages/MapsPage/widgets/SearchBar.dart';
-import 'package:kide/pages/MapsPage/models/FilterCategories.dart';
+import 'package:Kide/pages/MapsPage/models/FilterCategory.dart';
+import 'package:Kide/pages/MapsPage/widgets/SearchBar.dart';
+import 'package:Kide/pages/MapsPage/models/FilterCategories.dart';
 import 'package:provider/provider.dart';
-import 'package:kide/providers/getMarkers.dart';
+import 'package:Kide/providers/getMarkers.dart';
 import 'package:location/location.dart';
 import 'dart:math' as math;
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kide/config/Viewport.dart';
-import 'package:kide/util/constants.dart';
+import 'package:Kide/config/Viewport.dart';
+import 'package:Kide/util/constants.dart';
 
 class Page2 extends StatelessWidget {
   @override

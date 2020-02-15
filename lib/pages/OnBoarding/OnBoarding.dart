@@ -1,5 +1,5 @@
-//import 'package:kide/main.dart';
-import 'package:kide/util/constants.dart';
+//import 'package:Kide/main.dart';
+import 'package:Kide/util/constants.dart';
 
 import './dots_indicator.dart';
 import 'package:flutter/material.dart';

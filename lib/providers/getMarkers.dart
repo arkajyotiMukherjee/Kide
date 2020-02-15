@@ -9,11 +9,15 @@ class GetMarkers with ChangeNotifier {
   Firestore db = Firestore.instance;
 
   //Initialize the marker set
+  Set<Marker> _all = {};
   Set<Marker> _campuses = {};
   Set<Marker> _food = {};
   Set<Marker> _gates = {};
-  Set<Marker> _all = {};
   Set<Marker> _hostels = {};
+  Set<Marker> _sports = {};
+  Set<Marker> _toilets = {};
+  Set<Marker> _events = {};
+
 
   List<Marker> _suggestedMarkers = [];
 
@@ -33,6 +37,9 @@ class GetMarkers with ChangeNotifier {
       getMarkerData('food', _food);
       getMarkerData('gates', _gates);
       getMarkerData('hostels', _hostels);
+      // getMarkerData('sports', _sports);
+      // getMarkerData('toilets', _toilets);
+      // getMarkerData('events', _events);
 
       setMarkerMap();
     }
@@ -72,6 +79,9 @@ class GetMarkers with ChangeNotifier {
       'food': _food,
       'gates': _gates,
       'hostels': _hostels,
+      // 'sports': _sports,
+      // 'toilets': _toilets,
+      // 'events': _events,
     };
     // notifyListeners();
   }

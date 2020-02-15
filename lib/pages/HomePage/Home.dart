@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:kide/config/Viewport.dart';
-import 'package:kide/pages/MapsPage/Maps.dart';
-import 'package:kide/providers/getMarkers.dart';
-import 'package:kide/providers/getEvents.dart';
-import 'package:kide/util/constants.dart';
-import 'package:kide/util/data.dart';
-import 'package:kide/widgets/HeaderWidget.dart';
+import 'package:Kide/config/Viewport.dart';
+import 'package:Kide/pages/MapsPage/Maps.dart';
+import 'package:Kide/providers/getMarkers.dart';
+import 'package:Kide/providers/getEvents.dart';
+import 'package:Kide/util/constants.dart';
+import 'package:Kide/util/data.dart';
+import 'package:Kide/widgets/HeaderWidget.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 

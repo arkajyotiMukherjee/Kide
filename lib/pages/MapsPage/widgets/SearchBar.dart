@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:kide/config/Viewport.dart';
-import 'package:kide/util/constants.dart';
-import 'package:kide/widgets/HeaderWidget.dart';
+import 'package:Kide/config/Viewport.dart';
+import 'package:Kide/util/constants.dart';
+import 'package:Kide/widgets/HeaderWidget.dart';
 import 'package:provider/provider.dart';
-import 'package:kide/providers/getMarkers.dart';
+import 'package:Kide/providers/getMarkers.dart';
 
 void main() => runApp(MaterialApp(home: SearchBar()));
 

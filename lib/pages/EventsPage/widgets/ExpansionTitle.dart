@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kide/config/Viewport.dart';
-import 'package:kide/models/SubEvent.dart';
+import 'package:Kide/config/Viewport.dart';
+import 'package:Kide/models/SubEvent.dart';
 
 class ExpansionTitle extends StatelessWidget {
   const ExpansionTitle({

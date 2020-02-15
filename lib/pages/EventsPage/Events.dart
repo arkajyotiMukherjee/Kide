@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:kide/config/Viewport.dart';
-import 'package:kide/providers/getEvents.dart';
-import 'package:kide/pages/EventsPage/BookmarksPage.dart';
-import 'package:kide/pages/EventsPage/SubEvents.dart';
-import 'package:kide/util/constants.dart';
+import 'package:Kide/config/Viewport.dart';
+import 'package:Kide/providers/getEvents.dart';
+import 'package:Kide/pages/EventsPage/BookmarksPage.dart';
+import 'package:Kide/pages/EventsPage/SubEvents.dart';
+import 'package:Kide/util/constants.dart';
 import 'package:provider/provider.dart';
 
 void main() => runApp(EventsPage());

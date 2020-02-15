@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:kide/assets/Icon/custom_icons_icons.dart';
+import 'package:Kide/assets/Icon/custom_icons_icons.dart';
 import '../providers/router.dart';
 import "package:provider/provider.dart";
 
