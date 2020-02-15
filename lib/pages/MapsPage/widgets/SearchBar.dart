@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:kide/config/Viewport.dart';
+import 'package:kide/util/constants.dart';
 import 'package:kide/widgets/HeaderWidget.dart';
 import 'package:provider/provider.dart';
 import 'package:kide/providers/getMarkers.dart';
@@ -89,7 +90,9 @@ class _SearchBarState extends State<SearchBar> {
           _searchList.add(marker);
         }
       }
-      return _searchList.isNotEmpty ? _searchList.map((marker) => ChildItem(marker)).toList() : [Center(child: Text('No Places Found'))];
+      return _searchList.isNotEmpty
+          ? _searchList.map((marker) => ChildItem(marker)).toList()
+          : [Center(child: Text(NO_SEARCH_RESULT, softWrap: true))];
     }
   }
 
