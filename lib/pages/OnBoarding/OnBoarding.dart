@@ -1,18 +1,9 @@
-//import 'package:kide/main.dart';
 import 'package:kide/util/constants.dart';
-
 import './dots_indicator.dart';
 import 'package:flutter/material.dart';
 import './Page1.dart';
 import './Page2.dart';
 import './Page3.dart';
-
-//void main() => runApp(MyApp());
-
-// routes: <String, WidgetBuilder>{
-//       '/OnBoarding': (BuildContext context) => new OnBoarding(),
-//       '/MyApp': (BuildContext context) => new MyApp()
-//     },
 
 class OnboardingMainPage extends StatefulWidget {
   static const routeName = "/OnBoarding";

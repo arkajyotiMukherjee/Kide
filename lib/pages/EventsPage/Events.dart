@@ -9,13 +9,6 @@ import 'package:provider/provider.dart';
 void main() => runApp(EventsPage());
 
 class EventsPage extends StatelessWidget {
-  // final _eventList =  Event(
-  //   id: "01",
-  //   name: "KIITFEST 6.0",
-  //   startDate: "1st March 2020",
-  //   endDate: "4th March 2020",
-  //   eventCategories: eventCategories
-  // );
 
   @override
   Widget build(BuildContext context) {
