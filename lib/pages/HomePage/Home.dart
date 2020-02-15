@@ -313,7 +313,7 @@ class _HomePageState extends State<HomePage> {
                               print("Accomodation press");
                               Navigator.of(context, rootNavigator: true)
                                   .pop('dialog');
-                              Navigator.pushReplacement(
+                              Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>

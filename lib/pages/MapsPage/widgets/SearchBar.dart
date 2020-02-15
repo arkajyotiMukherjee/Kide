@@ -75,12 +75,11 @@ class _SearchBarState extends State<SearchBar> {
     return _markers.map((marker) => ChildItem(marker)).toList();
   }
 
-  List<ChildItem> _buildSearchList(Set<Marker> allMarkers) {
+  List<Widget> _buildSearchList(Set<Marker> allMarkers) {
     if (_searchText.isEmpty) {
       return _markers.map((marker) => ChildItem(marker)).toList();
     } else {
       List<Marker> _searchList = List();
-      print(allMarkers);
       for (int i = 0; i < allMarkers.length; i++) {
         Marker marker = allMarkers.elementAt(i);
         String title = marker.infoWindow.title;
@@ -91,7 +90,9 @@ class _SearchBarState extends State<SearchBar> {
           _searchList.add(marker);
         }
       }
-      return _searchList.map((marker) => ChildItem(marker)).toList();
+      return _searchList.isNotEmpty
+          ? _searchList.map((marker) => ChildItem(marker)).toList()
+          : [Center(child: Text(NO_SEARCH_RESULT, softWrap: true))];
     }
   }
 

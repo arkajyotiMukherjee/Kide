@@ -5,6 +5,7 @@ import 'package:kide/models/SubEvent.dart';
 import 'package:flutter/material.dart';
 import 'package:kide/pages/MapsPage/Maps.dart';
 import 'package:kide/util/constants.dart';
+import 'package:kide/widgets/HeaderWidget.dart';
 import 'package:provider/provider.dart';
 import 'package:kide/providers/bookmarks.dart';
 
@@ -136,10 +137,10 @@ class _EntryItemState extends State<EntryItem> {
                           //   builder: (context) =>
                           //     new DetailsPage(widget.entry)
                           // ),
-                          
                           DetailsPage.routeName,
                           arguments: widget.entry
                         );
+                        // showDetailsDialog(context);
                         print("details");
                       },
                       textColor: Colors.white,
@@ -183,6 +184,153 @@ class _EntryItemState extends State<EntryItem> {
       );
   }
 
+  // void showDetailsDialog(BuildContext context) async{
+  //   showDialog(
+  //     context: context,
+  //     builder: (BuildContext context) {
+  //       ViewPort().init(context);
+  //       return AlertDialog(
+  //         backgroundColor: Color(0xff222222),
+  //         titlePadding: EdgeInsets.fromLTRB(10.0, 10, 10, 2),
+  //         contentPadding: EdgeInsets.fromLTRB(5.0, 2, 5, 8),
+  //         title: Center(child: Text(widget.entry.name.toUpperCase())),
+  //         titleTextStyle: TextStyle(
+  //           color: Colors.white,
+  //           fontSize: 18
+  //         ),
+  //         shape: RoundedRectangleBorder(
+  //           borderRadius: BorderRadius.circular(20),
+  //         ),
+  //         content: Column(
+  //           mainAxisSize: MainAxisSize.min,
+  //           children: <Widget>[
+  //             Divider(
+  //               indent: 0,
+  //               endIndent: 0,
+  //               color: Colors.blueAccent,
+  //               thickness: 3,
+  //             ),
+  //             Flexible(
+  //               child: SingleChildScrollView(
+  //                 child: Column(
+  //                   crossAxisAlignment: CrossAxisAlignment.center,
+  //                   children: <Widget>[
+  //                     HeaderWidget("Date", 15, Colors.white),
+  //                     Divider(
+  //                       color: Colors.white,
+  //                       endIndent: 0,
+  //                     ),
+  //                     Padding(
+  //                       padding: const EdgeInsets.fromLTRB(0, 0, 0, 12),
+  //                       child: HeaderWidget(widget.entry.date, 12, Colors.white),
+  //                     ),
+  //                     Padding(
+  //                       padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+  //                       child: HeaderWidget("Venue", 15.0, Colors.white),
+  //                     ),
+  //                     Divider(
+  //                       color: Colors.white,
+  //                       endIndent: 0,
+  //                     ),
+  //                     Padding(
+  //                       padding: const EdgeInsets.fromLTRB(0, 0, 0, 35),
+  //                       child: HeaderWidget(widget.entry.location, 12, Colors.white),
+  //                     ),
+  //                     HeaderWidget("Time", 15, Colors.white),
+  //                     Divider(
+  //                       color: Colors.white,
+  //                       endIndent: 0,
+  //                     ),
+  //                     Padding(
+  //                       padding: const EdgeInsets.fromLTRB(0, 0, 0, 35),
+  //                       child: HeaderWidget(widget.entry.time, 12, Colors.white),
+  //                     ),
+  //                     Row(
+  //                       children: <Widget>[
+  //                         HeaderWidget("Description", 15, Colors.white),
+  //                         Spacer(),
+  //                         Container(
+  //                           height: 30,
+  //                           child: Padding(
+  //                             padding: const EdgeInsets.only(top: 10.0),
+  //                             child: RaisedButton(
+  //                               child: Text(
+  //                                 GO_TO_EVENT,
+  //                                 style: TextStyle(
+  //                                   //fontWeight: FontWeight.,
+  //                                   fontSize: 10
+  //                                 ),
+  //                               ),
+  //                               onPressed: () {
+  //                                 print("Detail press");
+  //                                 Navigator.of(context, rootNavigator: true)
+  //                                 .pop('dialog');
+  //                                 Navigator.push(
+  //                                     context,
+  //                                     MaterialPageRoute(
+  //                                         builder: (context) =>
+  //                                             MapsPage(eventMarker: widget.entry.location)));
+  //                               },
+  //                             ),
+  //                           ),
+  //                         ),
+  //                       ],
+  //                     ),
+  //                     Divider(
+  //                       color: Colors.white,
+  //                       endIndent: 0,
+  //                     ),
+  //                     Padding(
+  //                       padding: const EdgeInsets.only(left: 8.0),
+  //                       child: Text(
+  //                         widget.entry.description,
+  //                         style: TextStyle(
+  //                           fontSize: 12.0,
+  //                           color: Colors.white,
+  //                         ),
+  //                       ),
+  //                     ),
+  //                     Center(
+  //                       child: Padding(
+  //                         padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+  //                         child: HeaderWidget("DETAILS", 15.0, Colors.white),
+  //                       ),
+  //                     ),
+  //                     Divider(
+  //                       indent: ViewPort.screenWidth * 0.25,
+  //                       color: Colors.white,
+  //                       endIndent: ViewPort.screenWidth * 0.25,
+  //                     ),
+  //                     for (int i = 0; i < widget.entry.details.length; i++)
+  //                       Container(
+  //                         child: Column(
+  //                           crossAxisAlignment: CrossAxisAlignment.start,
+  //                           children: <Widget>[
+  //                             Padding(
+  //                               padding: const EdgeInsets.fromLTRB(0, 0, 0, 12),
+  //                               child: HeaderWidget(
+  //                                   widget.entry.details[i].header, 15, Colors.white),
+  //                             ),
+  //                             Padding(
+  //                               padding: const EdgeInsets.fromLTRB(35, 0, 0, 20),
+  //                               child: Text(
+  //                                 widget.entry.details[i].desc,
+  //                                 style: TextStyle(fontSize: 12, fontFamily: 'Roboto', color: Colors.white),
+  //                               ),
+  //                             )
+  //                           ],
+  //                         ),
+  //                       )
+  //                   ],
+  //                 )
+  //               )
+  //             )
+  //           ]
+  //         )
+  //       );
+  //     }
+  //   );
+  // }
   @override
   Widget build(BuildContext context) {
     return Card(
