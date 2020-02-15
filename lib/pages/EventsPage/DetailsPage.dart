@@ -66,75 +66,83 @@ class DetailsPage extends StatelessWidget {
                         HeaderWidget("Description", 15,Colors.white),
                         Spacer(),
                         Container(
-                          height: 30,
                           child: Padding(
                             padding: const EdgeInsets.only(top:10.0),
                             child: RaisedButton(
+                              color: Colors.blueAccent,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
                               child: Text(GO_TO_EVENT,
-                              style: TextStyle(
-                                //fontWeight: FontWeight.,
-                                fontSize: 10),
+                                style: TextStyle(
+                                  //fontWeight: FontWeight.,
+                                  fontSize: 10
+                                ),
+                              ),
+                              onPressed: () {
+                                print("Detail press");
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => MapsPage(eventMarker: _subEvent.location)));
+                              },
+                            ),
                           ),
-                          onPressed: () {
-                            print("Detail press");
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => MapsPage(eventMarker: _subEvent.location)));
-                          },
+                        ),
+                      ],
+                    ),
+                    Divider(
+                      color: Colors.white,
+                      endIndent: ViewPort.screenWidth * 0.55,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: Text(
+                        _subEvent.description,
+                        style: TextStyle(
+                          fontSize: 12.0,
+                          color: Colors.white,
                         ),
                       ),
                     ),
-                  ],
-                ),
-                Divider(
-                  color: Colors.white,
-                  endIndent: ViewPort.screenWidth * 0.55,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
-                  child: Text(
-                    _subEvent.description,
-                    style: TextStyle(
-                      fontSize: 12.0,
+                    Center(
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                        child: HeaderWidget("DETAILS", 15.0,Colors.white),
+                      ),
+                    ),
+                    Divider(
+                      indent: ViewPort.screenWidth * 0.25,
                       color: Colors.white,
+                      endIndent: ViewPort.screenWidth * 0.25,
                     ),
-                  ),
-                ),
-                Center(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-                    child: HeaderWidget("DETAILS", 15.0,Colors.white),
-                  ),
-                ),
-                Divider(
-                  indent: ViewPort.screenWidth * 0.25,
-                  color: Colors.white,
-                  endIndent: ViewPort.screenWidth * 0.25,
-                ),
-                for (int i = 0; i < _subEvent.details.length; i++)
-                  Container(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 0, 12),
-                          child: HeaderWidget(_subEvent.details[i].header, 15,Colors.white),
+                    for (int i = 0; i < _subEvent.details.length; i++)
+                      Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(0, 0, 0, 12),
+                              child: HeaderWidget("${_subEvent.details[i].header}:", 15,Colors.white),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(35, 0, 0, 20),
+                              child: Text(
+                                _subEvent.details[i].desc,
+                                style:
+                                    TextStyle(fontSize: 12, fontFamily: 'Roboto', color: Colors.white70),
+                              ),
+                            )
+                          ],
                         ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(35, 0, 0, 20),
-                          child: Text(
-                            _subEvent.details[i].desc,
-                            style:
-                                TextStyle(fontSize: 12, fontFamily: 'Roboto'),
-                          ),
-                        )
-                      ],
-                    ),
-                  )
-              ]),
-            ),
-          ])),
-        ));
+                      )
+                  ]
+                ),
+              ),
+            ]
+          )
+        ),
+      )
+    );
   }
 }
