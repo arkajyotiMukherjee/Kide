@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kide/config/Viewport.dart';
+import 'package:kide/util/colors.dart';
 import 'package:kide/util/constants.dart';
 
 class Page3 extends StatelessWidget {
@@ -18,8 +19,11 @@ class Page3 extends StatelessWidget {
                   new Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(ONBOARDING_EVENTS_HEADING,
-                      style: Theme.of(context).textTheme.display1.copyWith(color: Colors.blueAccent),
-                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: MATERIAL_BLUE_ACCENT
+                      ),
+                    textAlign: TextAlign.center,
                     ),
                   ),
                   Image.asset(
@@ -29,8 +33,12 @@ class Page3 extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(12, 0, 12, 80),
                     child: Text(ONBOARDING_EVENTS_DESC,
-                      style: Theme.of(context).textTheme.body1.copyWith(color: Colors.white70),
-                      textAlign: TextAlign.left,
+                    softWrap: true,
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: MATERIAL_WHITE_70
+                      ),
+                    textAlign: TextAlign.left,
                     ),
                   )
                 ],
