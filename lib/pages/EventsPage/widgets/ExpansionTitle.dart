@@ -41,7 +41,6 @@ class ExpansionTitle extends StatelessWidget {
           )
         ),
         Container(
-          // color: Colors.blue,
           height: 65,
           width: ViewPort.screenWidth ,
           padding: EdgeInsets.fromLTRB(ViewPort.screenWidth * 0.025, 35.0, 0.0, 0.0),
