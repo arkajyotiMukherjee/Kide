@@ -47,3 +47,4 @@ const String TOTAL_PARTICIPANTS = "TOTAL PARTICIPANTS: ";
 const String TOTAL_OFFICIALS = "TOTAL OFFICIALS: ";
 const String DASHBOARD = "DASHBOARD";
 const String FIND_IN_MAPS = "FIND IN MAPS";
+const String NO_SEARCH_RESULT = "No Places Found";
