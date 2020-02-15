@@ -18,7 +18,6 @@ class GetMarkers with ChangeNotifier {
   Set<Marker> _toilets = {};
   Set<Marker> _events = {};
 
-
   List<Marker> _suggestedMarkers = [];
 
   Map<String, Set<Marker>> _markers = {};
@@ -37,9 +36,9 @@ class GetMarkers with ChangeNotifier {
       getMarkerData('food', _food);
       getMarkerData('gates', _gates);
       getMarkerData('hostels', _hostels);
-      // getMarkerData('sports', _sports);
-      // getMarkerData('toilets', _toilets);
-      // getMarkerData('events', _events);
+      getMarkerData('sports', _sports);
+      getMarkerData('toilets', _toilets);
+      getMarkerData('events', _events);
 
       setMarkerMap();
     }
@@ -72,16 +71,22 @@ class GetMarkers with ChangeNotifier {
   }
 
   void setMarkerMap() {
-    _all = Set.from(_campuses)..addAll(_food)..addAll(_gates)..addAll(_hostels);
+    _all = Set.from(_campuses)
+      ..addAll(_food)
+      ..addAll(_gates)
+      ..addAll(_hostels)
+      ..addAll(_sports)
+      ..addAll(_toilets)
+      ..addAll(_events);
     _markers = {
       'all': _all,
       'campuses': _campuses,
       'food': _food,
       'gates': _gates,
       'hostels': _hostels,
-      // 'sports': _sports,
-      // 'toilets': _toilets,
-      // 'events': _events,
+      'sports': _sports,
+      'toilets': _toilets,
+      'events': _events,
     };
     // notifyListeners();
   }
@@ -91,6 +96,8 @@ class GetMarkers with ChangeNotifier {
       (snapshot) {
         snapshot.documents.forEach((doc) {
           markerset.add(populateMarker(doc));
+          if(category == "food")
+            print("$markerset \n\n\n\n\n");
           notifyListeners();
         });
       },
