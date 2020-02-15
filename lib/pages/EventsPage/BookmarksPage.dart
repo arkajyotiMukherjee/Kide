@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kide/pages/EventsPage/widgets/EntryItem.dart';
-import 'package:kide/providers/bookmarks.dart';
-import 'package:kide/util/constants.dart';
+import 'package:Kide/pages/EventsPage/widgets/EntryItem.dart';
+import 'package:Kide/providers/bookmarks.dart';
+import 'package:Kide/util/constants.dart';
 import 'package:provider/provider.dart';
 
 class BookmarksPage extends StatelessWidget {

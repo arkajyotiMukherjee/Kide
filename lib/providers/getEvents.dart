@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
-import 'package:kide/models/EventCategory.dart';
-import 'package:kide/models/SubEvent.dart';
-import 'package:kide/models/EventDetail.dart';
+import 'package:Kide/models/EventCategory.dart';
+import 'package:Kide/models/SubEvent.dart';
+import 'package:Kide/models/EventDetail.dart';
 
 class GetEvents with ChangeNotifier {
   bool _isConnected = false;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kide/util/constants.dart';
-import '../providers/router.dart';
+import 'package:Kide/util/constants.dart';
+import 'package:Kide/providers/router.dart';
 import "package:provider/provider.dart";
 
 class BottomNav extends StatelessWidget {

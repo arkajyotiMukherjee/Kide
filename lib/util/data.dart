@@ -1,15 +1,15 @@
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:kide/models/Contact.dart';
-import 'package:kide/models/EmergencyContact.dart';
-import 'package:kide/models/EventCategory.dart';
-import 'package:kide/models/ContactCategory.dart';
-import 'package:kide/models/More.dart';
-import 'package:kide/models/MoreInfo.dart';
-import 'package:kide/models/Official.dart';
-import 'package:kide/models/DashBoard.dart';
-import 'package:kide/models/SubEvent.dart';
+import 'package:Kide/models/Contact.dart';
+import 'package:Kide/models/EmergencyContact.dart';
+import 'package:Kide/models/EventCategory.dart';
+import 'package:Kide/models/ContactCategory.dart';
+import 'package:Kide/models/More.dart';
+import 'package:Kide/models/MoreInfo.dart';
+import 'package:Kide/models/Official.dart';
+import 'package:Kide/models/DashBoard.dart';
+import 'package:Kide/models/SubEvent.dart';
 import 'package:flutter/material.dart';
-import 'package:kide/models/EventDetail.dart';
+import 'package:Kide/models/EventDetail.dart';
 
 class Accomodation {
   final String name;
