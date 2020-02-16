@@ -1,3 +1,4 @@
+import 'package:Kide/widgets/HeaderWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:Kide/pages/ContactsPage/ContactList.dart';
 import 'package:Kide/pages/EventsPage/BookmarksPage.dart';
@@ -71,13 +72,98 @@ class _MyHomePageState extends State<MyHomePage> {
     EVENTS,
     MORE
   ];
+
+  void showUserSelectionDialog(BuildContext context) async {
+    showDialog(
+      context: context,
+      useRootNavigator: true,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: Color(0xff222222),
+          titlePadding: EdgeInsets.fromLTRB(10.0, 10, 10, 2),
+          contentPadding: EdgeInsets.fromLTRB(5.0, 2, 5, 8),
+          title: Center(child: Text(EVENT_OVERVIEW)),
+          titleTextStyle: TextStyle(color: Colors.white, fontSize: 18),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          content: HeaderWidget("Default User Select", 30, Colors.white)
+        );
+      }
+    );
+  }
   
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     
     final indexState = Provider.of<Router>(context);
-
-    return Scaffold(
+    
+    final _getEvents = Provider.of<GetEvents>(context);
+    return _getEvents.userType == "Participant or ULO?" ?
+      AlertDialog(
+        backgroundColor: Color(0xff222222),
+        titlePadding: EdgeInsets.fromLTRB(10.0, 10, 10, 2),
+        contentPadding: EdgeInsets.fromLTRB(5.0, 2, 5, 8),
+        title: Center(child: Text("Welcom to KIDE!")),
+        titleTextStyle: TextStyle(color: Colors.white, fontSize: 24),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Divider(
+              indent: 0,
+              endIndent: 0,
+              color: Colors.blueAccent,
+              thickness: 3,
+            ),
+            Flexible(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    HeaderWidget("Please Tell us About Yourself!", 18, Colors.white70),
+                    DropdownButton(
+                      isExpanded: true,
+                      isDense: true,
+                      value: _getEvents.userType,
+                      icon: Icon(Icons.keyboard_arrow_down),
+                      iconSize: 24,
+                      elevation: 16,
+                      style: TextStyle(
+                        color: Colors.white70,
+                      ),
+                      underline: Container(
+                        height: 2,
+                        color: Color.fromRGBO(0, 112, 240, 87),
+                      ),
+                      items: [
+                        "Participant or ULO?",
+                        "Participant",
+                        "ULO"
+                      ].map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                      onChanged: (String newVal) =>
+                          _getEvents.setUserType(newVal),
+                    ),
+                  ]
+                )
+              )
+            )
+          ]
+        )
+      )
+    : Scaffold(
       appBar: indexState.bottomNavIndex != 0 ? AppBar(
         title: Center(
           child: Text(

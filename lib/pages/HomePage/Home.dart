@@ -360,15 +360,19 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+  
+  
   @override
   void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
     super.didChangeDependencies();
-    
     final _getEvents = Provider.of<GetEvents>(context);
     if (_getEvents.eventList.length == 0) _getEvents.setEvents();
   }
 
+  @override
+  void initState() {
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     // Markers Listner
