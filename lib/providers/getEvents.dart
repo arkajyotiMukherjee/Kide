@@ -1,3 +1,4 @@
+import 'package:Kide/models/ULO.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,8 @@ class GetEvents with ChangeNotifier {
   bool _isConnected = false;
   bool _fetchFlagCategories = false;
   bool _fetchFlagUniversities = false;
+  bool _fetchFlagULOs = false;
+  String _userType = "Participant or ULO?";
   //Create Firebase Instance
   Firestore db = Firestore.instance;
 
@@ -17,6 +20,7 @@ class GetEvents with ChangeNotifier {
   // List <EventDetail> eventDetails = [];
   // Iterable<SubEvent> subEvents = [];
   List<EventCategory> _eventCategories = [];
+  List<ULO> _ulo_list = [];
 
   String _university = "Select Your University";
   List<String> _universities = [];
@@ -25,8 +29,17 @@ class GetEvents with ChangeNotifier {
     return _university;
   }
 
+  String get userType {
+    return _userType;
+  }
+
   void setUniversity(String univ) {
     _university = univ;
+    notifyListeners();
+  }
+  
+  void setUserType(String type) {
+    _userType = type;
     notifyListeners();
   }
 
@@ -52,13 +65,20 @@ class GetEvents with ChangeNotifier {
     checkConnectivity();
     if (_isConnected ) {
       print("Set Events");
+
       if (_eventList.length == 0 && _fetchFlagCategories == false){
         getEventList();
         _fetchFlagCategories = true;
       }
+
       if (_universities.length == 0 && _fetchFlagUniversities == false){
         getUniversities();
         _fetchFlagUniversities = true;
+      }
+
+      if (_ulo_list.length == 0 && _fetchFlagULOs == false){
+        getULOs();
+        _fetchFlagULOs = true;
       }
     }
   }
@@ -104,6 +124,7 @@ class GetEvents with ChangeNotifier {
   }
 
   void getUniversities() {
+    print("\n\n\n\n\n ULO \n\n\n\n");
     db.collection('university_list').snapshots().listen(
       (snapshot) {
         snapshot.documents.forEach((doc) {
@@ -116,6 +137,27 @@ class GetEvents with ChangeNotifier {
       },
     );
   }
+
+  void getULOs() {
+    db.collection('ulo_list').snapshots().listen(
+      (snapshot) {
+        snapshot.documents.forEach((doc) {
+          // populate universityList
+          _ulo_list.add(new ULO(
+            name: doc.data['name'],
+            phoneNumber: doc.data['phone_number'],
+            universities: [...doc.data['univs'].map((un) {
+              return _universities[un];
+            })],
+          ));
+          _ulo_list = _ulo_list.toSet().toList();
+          print(_ulo_list);
+          notifyListeners();
+        });
+      },
+    );
+  }
+
 
   void getEventCategory(String collectionName) {
     print("get cet");
