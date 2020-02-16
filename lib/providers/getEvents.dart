@@ -3,7 +3,7 @@ import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:Kide/models/EventCategory.dart';
 import 'package:Kide/models/SubEvent.dart';
-import 'package:Kide/models/EventDetail.dart';
+// import 'package:Kide/models/EventDetail.dart';
 
 class GetEvents with ChangeNotifier {
   bool _isConnected = false;
@@ -101,21 +101,21 @@ class GetEvents with ChangeNotifier {
         List<SubEvent> subEvents = [];
         snapshot.documents.forEach((doc) {
           //populate all other Lists
-          List<String> headers = doc.data['d_headers'].cast<String>();
-          List<String> descriptions = doc.data['d_descs'].cast<String>();
-          List<EventDetail> eventDetails = [];
-          for (int i = 0; i < headers.length; i++)
-            eventDetails.add(new EventDetail(
-                id: i.toString(), header: headers[i], desc: descriptions[i]));
+          // List<String> headers = doc.data['d_headers'].cast<String>();
+          // List<String> descriptions = doc.data['d_descs'].cast<String>();
+          // List<EventDetail> eventDetails = [];
+          // for (int i = 0; i < headers.length; i++)
+          //   eventDetails.add(new EventDetail(
+          //       id: i.toString(), header: headers[i], desc: descriptions[i]));
 
           subEvents.add(SubEvent(
             id: Key(doc.documentID),
             name: doc.data['name'],
             date: doc.data['date'],
             time: doc.data['time'],
-            description: doc.data['description'],
+            // description: doc.data['description'],
             location: doc.data['location'],
-            details: eventDetails,
+            // details: eventDetails,
             universities: [
               _universities[doc.data['universities'][0]],
               _universities[doc.data['universities'][1]]

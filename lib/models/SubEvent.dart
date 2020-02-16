@@ -19,6 +19,6 @@ class SubEvent {
     this.description,
     @required this.location,
     @required this.universities,
-    @required this.details
+    this.details
   });
 }
