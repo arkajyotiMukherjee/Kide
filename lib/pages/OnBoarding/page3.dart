@@ -19,8 +19,9 @@ class Page3 extends StatelessWidget {
                   new Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(ONBOARDING_EVENTS_HEADING,
+                    softWrap: true,
                       style: TextStyle(
-                        fontSize: 12,
+                        fontSize: 24,
                         color: MATERIAL_BLUE_ACCENT
                       ),
                     textAlign: TextAlign.center,
@@ -35,7 +36,7 @@ class Page3 extends StatelessWidget {
                     child: Text(ONBOARDING_EVENTS_DESC,
                     softWrap: true,
                       style: TextStyle(
-                        fontSize: 12,
+                        fontSize: 24,
                         color: MATERIAL_WHITE_70
                       ),
                     textAlign: TextAlign.left,

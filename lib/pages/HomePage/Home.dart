@@ -360,6 +360,14 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+    
+    final _getEvents = Provider.of<GetEvents>(context);
+    if (_getEvents.eventList.length == 0) _getEvents.setEvents();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -376,7 +384,6 @@ class _HomePageState extends State<HomePage> {
     // Events Listener
     final _getEvents = Provider.of<GetEvents>(context);
     //for Events
-    if (_getEvents.eventList.length == 0) _getEvents.setEvents();
 
     ViewPort().init(context);
 

@@ -21,8 +21,8 @@ class Page1 extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(ONBOARDING_MAP_HEADING,
                     softWrap: true,
-                      style: TextStyle(
-                        fontSize: 12,
+                    style: TextStyle(
+                        fontSize: 24,
                         color: MATERIAL_BLUE_ACCENT,
                       ),
                       textAlign: TextAlign.center,
@@ -36,8 +36,9 @@ class Page1 extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(12, 0, 12, 80),
                     child: Text(ONBOARDING_MAP_DESC,
+                      softWrap: true,
                       style: TextStyle(
-                        fontSize: 12,
+                        fontSize: 24,
                         color: MATERIAL_WHITE_70
                       ),
                       textAlign: TextAlign.left,

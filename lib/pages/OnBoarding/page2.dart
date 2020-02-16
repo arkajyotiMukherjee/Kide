@@ -22,7 +22,7 @@ class Page2 extends StatelessWidget {
                     child: Text(ONBOARDING_CONTACTS_HEADING,
                     softWrap: true,
                       style: TextStyle(
-                        fontSize: 12,
+                        fontSize: 24,
                         color: MATERIAL_BLUE_ACCENT
                       ),
                       textAlign: TextAlign.center,
@@ -35,8 +35,9 @@ class Page2 extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(12, 0, 12, 80),
                     child: Text(ONBOARDING_CONTACTS_DESC,
+                    softWrap: true,
                       style: TextStyle(
-                        fontSize: 12,
+                        fontSize: 24,
                         color: MATERIAL_WHITE_70
                       ),
                       textAlign: TextAlign.left,

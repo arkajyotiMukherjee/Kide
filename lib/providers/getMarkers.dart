@@ -27,7 +27,7 @@ class GetMarkers with ChangeNotifier {
   }
 
   List<Marker> get suggestedMarkers {
-    return _suggestedMarkers;
+    return _suggestedMarkers.toSet().toList();
   }
 
   void setMarkers() {
