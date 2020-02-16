@@ -101,25 +101,25 @@ class _EntryItemState extends State<EntryItem> {
                 Container(
                   height: 20,
                 ),
-                Row(
-                  children: <Widget>[
-                    Container(
-                      width: 16,
-                    ),
-                    Flexible(
-                      child: Container(
-                        child: Text(
-                          root.description,
-                          overflow: TextOverflow.visible,
-                          style: TextStyle(),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      width: 16,
-                    ),
-                  ],
-                ),
+                // Row(
+                //   children: <Widget>[
+                //     Container(
+                //       width: 16,
+                //     ),
+                //     Flexible(
+                //       child: Container(
+                //         child: Text(
+                //           root.description,
+                //           overflow: TextOverflow.visible,
+                //           style: TextStyle(),
+                //         ),
+                //       ),
+                //     ),
+                //     Container(
+                //       width: 16,
+                //     ),
+                //   ],
+                // ),
                 Container(
                   height: 20,
                 ),
