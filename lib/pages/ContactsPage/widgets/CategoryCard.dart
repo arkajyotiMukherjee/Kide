@@ -25,6 +25,8 @@ class CategoryCard extends StatelessWidget{
         },
       child: Center(
         child: Text(contactCategory.name,
+          textAlign: TextAlign.center,
+          //overflow: TextOverflow.fade,
           style: TextStyle(
             color: Colors.white,
             fontSize: 15.0

@@ -682,40 +682,40 @@ List<Contact> transportationTeam = [
 // CARRRY FROM HERERE -------------------------------------------------------------------------------------->
 
    Contact(
-    id: "05",
-    name: "Chandan Prasad Shukar",
-    designation: "Bhubaneswar Railway Station",
-    number: "6370163695",
+    id: "09",
+    name: "Pratik Nanda",
+    designation: "Baramunda Bus Stand",
+    number: "9777460076",
   ),
    Contact(
-    id: "05",
-    name: "Chandan Prasad Shukar",
-    designation: "Bhubaneswar Railway Station",
-    number: "6370163695",
+    id: "10",
+    name: "Ankur Borah",
+    designation: "KIIT Campus Shuttle",
+    number: "7577873724",
   ),
    Contact(
-    id: "05",
-    name: "Chandan Prasad Shukar",
-    designation: "Bhubaneswar Railway Station",
-    number: "6370163695",
+    id: "11",
+    name: "Kumar Aayush",
+    designation: "KIIT Campus Shuttle",
+    number: "7609828033",
   ),
    Contact(
-    id: "05",
-    name: "Chandan Prasad Shukar",
-    designation: "Bhubaneswar Railway Station",
-    number: "6370163695",
+    id: "12",
+    name: "Nimisha Umesh",
+    designation: "Outside KIIT Shuttle",
+    number: "9987547510",
   ),
    Contact(
-    id: "05",
-    name: "Chandan Prasad Shukar",
-    designation: "Bhubaneswar Railway Station",
-    number: "6370163695",
+    id: "12",
+    name: "Shabnam Yasmin",
+    designation: "VIP & Dignatries",
+    number: "6003633671",
   ),
    Contact(
-    id: "05",
-    name: "Chandan Prasad Shukar",
-    designation: "Bhubaneswar Railway Station",
-    number: "6370163695",
+    id: "13",
+    name: "Sandesh Mane",
+    designation: "Technical Officials, Competition Manager",
+    number: "8828468081",
   ),
 ];
 
@@ -723,14 +723,32 @@ List<Contact> transportationTeam = [
 List<Contact> contactsHelpLine = [
   Contact(
     id: "01",
-    name: "KIIT Contact Us - 1",
-    designation: "HelpDesk 1",
-    number: "6742725113",
+    name: "Catering Helpline",
+    designation: null,
+    number: "9668738412",
   ),
   Contact(
     id: "02",
-    name: "KIIT Contact Us - 2",
-    designation: "HelpDesk 2",
+    name: "Accomodation Helpline",
+    designation: null,
+    number: "9178738368",
+  ),
+   Contact(
+    id: "03",
+    name: "Transport Helpline",
+    designation: null,
+    number: "9178738291",
+  ),
+  Contact(
+    id: "04",
+    name: "KIIT Helpdesk - 1",
+    designation: null,
+    number: "6742725113",
+  ),
+  Contact(
+    id: "05",
+    name: "KIIT Helpdesk - 2",
+    designation: null,
     number: "6742741389",
   ),
 ];
@@ -742,24 +760,14 @@ List<ContactCategory> contactCategoryList = [
     contacts: cateringTeam
   ),
   ContactCategory(
-    id: "01",
+    id: "02",
     name: "Accomodation Team",
     contacts: accomodationTeam
   ),
   ContactCategory(
-    id: "01",
+    id: "03",
     name: "Transportation Team",
     contacts: transportationTeam
-  ),
-  ContactCategory(
-    id: "02",
-    name: "Boy's Hostels",
-    contacts: kpHostels
-  ),
-  ContactCategory(
-    id: "03",
-    name: "Boy's Hostels",
-    contacts: kpHostels
   ),
   ContactCategory(
     id: "04",
