@@ -22,6 +22,9 @@ class MorePage extends StatelessWidget {
                       MoreCard(more[i],more[i].color)
 
                     ,Card(
+                      margin: EdgeInsets.fromLTRB(5, 15, 5, 15),
+                      shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0)),
                       color: Color(0xFFD4A437),
                       child: InkWell(
                         child: Center(

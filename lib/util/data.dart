@@ -138,8 +138,16 @@ MoreInfo(
 
 
 List<More> more = [
-  More(
+   More(
     id: "01",
+    moreName: "Khelo India",
+    pageFormat: kIndia,
+    assetRoute: "lib/pages/HomePage/assets/KIUG_KIIT.jpg",
+    link: "https://kheloindia.gov.in/",
+    color: Color(0x42000000),
+  ),
+  More(
+    id: "02",
     moreName: "KISS",
     pageFormat: kiss,
     assetRoute: "lib/assets/KISS.png",
@@ -147,7 +155,7 @@ List<More> more = [
     color: Color(0x42000000),
   ),
   More(
-    id: "02",
+    id: "03",
     moreName: "KIIT",
     pageFormat: kiit,
     assetRoute: "lib/assets/KIIT.jpg",
@@ -155,19 +163,11 @@ List<More> more = [
     color: Color(0x42000000),
   ),
   More(
-    id: "03",
+    id: "04",
     moreName: "Our Founder",
     pageFormat: founderSir,
     assetRoute: "lib/assets/Founder_sir.jpeg",
     link: "https://achyutasamanta.com/",
-    color: Color(0x42000000),
-  ),
-  More(
-    id: "04",
-    moreName: "Khelo India",
-    pageFormat: kIndia,
-    assetRoute: "lib/pages/HomePage/assets/KIUG_KIIT.jpg",
-    link: "https://kheloindia.gov.in/",
     color: Color(0x42000000),
   ),
 ];
