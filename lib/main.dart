@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kide/pages/OnBoarding/OnBoarding.dart';
-import './MyApp.dart';
-
-import 'SplashScreen.dart';
+import 'package:Kide/pages/OnBoarding/OnBoarding.dart';
+import 'package:Kide/MyApp.dart';
+import 'package:Kide/SplashScreen.dart';
 
 void main() {
   runApp(new MaterialApp(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:kide/config/Viewport.dart';
-import 'package:kide/pages/MapsPage/Maps.dart';
-import 'package:kide/util/constants.dart';
+import 'package:Kide/config/Viewport.dart';
+import 'package:Kide/pages/MapsPage/Maps.dart';
+import 'package:Kide/util/constants.dart';
 import '../../models/SubEvent.dart';
-import 'package:kide/widgets/HeaderWidget.dart';
+import 'package:Kide/widgets/HeaderWidget.dart';
 
 class DetailsPage extends StatelessWidget {
   static const routeName = '/DetailsPage';

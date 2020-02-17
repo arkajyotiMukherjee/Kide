@@ -1,11 +1,11 @@
-import 'package:kide/config/Viewport.dart';
-import 'package:kide/pages/EventsPage/widgets/ExpansionTitle.dart';
-import 'package:kide/models/SubEvent.dart';
+import 'package:Kide/config/Viewport.dart';
+import 'package:Kide/pages/EventsPage/widgets/ExpansionTitle.dart';
+import 'package:Kide/models/SubEvent.dart';
 import 'package:flutter/material.dart';
-import 'package:kide/pages/MapsPage/Maps.dart';
-import 'package:kide/util/constants.dart';
+import 'package:Kide/pages/MapsPage/Maps.dart';
+import 'package:Kide/util/constants.dart';
 import 'package:provider/provider.dart';
-import 'package:kide/providers/bookmarks.dart';
+import 'package:Kide/providers/bookmarks.dart';
 
 class EntryItem extends StatefulWidget {
   EntryItem(this.entry);
@@ -101,25 +101,25 @@ class _EntryItemState extends State<EntryItem> {
                 Container(
                   height: 20,
                 ),
-                Row(
-                  children: <Widget>[
-                    Container(
-                      width: 16,
-                    ),
-                    Flexible(
-                      child: Container(
-                        child: Text(
-                          root.description,
-                          overflow: TextOverflow.visible,
-                          style: TextStyle(),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      width: 16,
-                    ),
-                  ],
-                ),
+                // Row(
+                //   children: <Widget>[
+                //     Container(
+                //       width: 16,
+                //     ),
+                //     Flexible(
+                //       child: Container(
+                //         child: Text(
+                //           root.description,
+                //           overflow: TextOverflow.visible,
+                //           style: TextStyle(),
+                //         ),
+                //       ),
+                //     ),
+                //     Container(
+                //       width: 16,
+                //     ),
+                //   ],
+                // ),
                 Container(
                   height: 20,
                 ),

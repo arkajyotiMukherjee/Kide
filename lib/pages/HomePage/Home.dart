@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:kide/config/Viewport.dart';
-import 'package:kide/pages/MapsPage/Maps.dart';
-import 'package:kide/providers/getMarkers.dart';
-import 'package:kide/providers/getEvents.dart';
-import 'package:kide/util/constants.dart';
-import 'package:kide/util/data.dart';
-import 'package:kide/widgets/HeaderWidget.dart';
+import 'package:Kide/config/Viewport.dart';
+import 'package:Kide/pages/MapsPage/Maps.dart';
+import 'package:Kide/providers/getMarkers.dart';
+import 'package:Kide/providers/getEvents.dart';
+import 'package:Kide/util/constants.dart';
+import 'package:Kide/util/data.dart';
+import 'package:Kide/widgets/HeaderWidget.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -29,29 +29,59 @@ class _HomePageState extends State<HomePage> {
     totGames: 20,
     totParticipants: 1700,
     gameAccomodations: {
-      "Hockey": [
+      "Archery": [
         Accomodation(name: "KP6", markerId: "campus_3"),
-        Accomodation(name: "KP7", markerId: "gate_152"),
-        Accomodation(name: "KP6", markerId: "kp6"),
-        Accomodation(name: "KP6", markerId: "kp_6"),
       ],
-      "Chess": [
-        Accomodation(name: "KP6", markerId: "kp_6"),
-      ],
-      "Football": [
-        Accomodation(name: "KP6", markerId: "kp_6"),
-        Accomodation(name: "KP6", markerId: "kp_6"),
-        Accomodation(name: "KP6", markerId: "kp_6"),
-      ],
-      "Cricket": [
-        Accomodation(name: "KP6", markerId: "kp_6"),
-        Accomodation(name: "KP6", markerId: "kp_6"),
-        Accomodation(name: "KP6", markerId: "kp_6"),
-        Accomodation(name: "KP6", markerId: "kp_6"),
+      "Athletics": [
+        Accomodation(name: "KP6", markerId: "campus_3"),
       ],
       "Badminton": [
-        Accomodation(name: "KP6", markerId: "kp_6"),
-        Accomodation(name: "KP6", markerId: "kp_6"),
+        Accomodation(name: "KP6", markerId: "campus_3"),
+      ],
+      "Basketball": [
+        Accomodation(name: "KP6", markerId: "campus_3"),
+      ],
+      "Boxing": [
+        Accomodation(name: "KP6", markerId: "campus_3"),
+      ],
+      "Fencing": [
+        Accomodation(name: "KP6", markerId: "campus_3"),
+      ],
+      "Football": [
+        Accomodation(name: "KP6", markerId: "campus_3"),
+        Accomodation(name: "KP6", markerId: "campus_3"),
+        Accomodation(name: "KP6", markerId: "campus_3"),
+      ],
+      "Hockey": [
+        Accomodation(name: "KP6", markerId: "campus_3"),
+      ],
+      "Judo": [
+        Accomodation(name: "KP6", markerId: "campus_3"),
+      ],
+      "Kabaddi": [
+        Accomodation(name: "KP6", markerId: "campus_3"),
+      ],
+      "Rugby": [
+        Accomodation(name: "KP6", markerId: "campus_3"),
+      ],
+      "Swimming": [
+        Accomodation(name: "KP6", markerId: "campus_3"),
+        Accomodation(name: "KP6", markerId: "campus_3"),
+      ],
+      "Table Tennis": [
+        Accomodation(name: "KP6", markerId: "campus_3"),
+      ],
+      "Tennis": [
+        Accomodation(name: "KP6", markerId: "campus_3"),
+      ],
+      "Vollyball": [
+        Accomodation(name: "KP6", markerId: "campus_3"),
+      ],
+      "Weightlifting": [
+        Accomodation(name: "KP6", markerId: "campus_3"),
+      ],
+      "Wrestling": [
+        Accomodation(name: "KP6", markerId: "campus_3"),
       ],
     },
   );
@@ -233,7 +263,7 @@ class _HomePageState extends State<HomePage> {
                                 style: TextStyle(color: Colors.white),
                               ),
                               onPressed: () {
-                                _goToMaps("gate_152");
+                                _goToMaps("campus_3");
                               },
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
@@ -330,6 +360,14 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+    
+    final _getEvents = Provider.of<GetEvents>(context);
+    if (_getEvents.eventList.length == 0) _getEvents.setEvents();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -346,7 +384,6 @@ class _HomePageState extends State<HomePage> {
     // Events Listener
     final _getEvents = Provider.of<GetEvents>(context);
     //for Events
-    if (_getEvents.eventList.length == 0) _getEvents.setEvents();
 
     ViewPort().init(context);
 

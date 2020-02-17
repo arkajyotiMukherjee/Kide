@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
+import 'package:Kide/models/MoreInfo.dart';
 import 'package:flutter/material.dart';
-import 'package:kide/models/MoreInfo.dart';
 
 class More {
   final String id;

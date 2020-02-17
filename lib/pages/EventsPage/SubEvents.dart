@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:kide/models/EventCategory.dart';
-import 'package:kide/models/SubEvent.dart';
-import 'package:kide/pages/EventsPage/widgets/EntryItem.dart';
-import 'package:kide/providers/getEvents.dart';
-import 'package:kide/util/constants.dart';
+import 'package:Kide/models/EventCategory.dart';
+import 'package:Kide/models/SubEvent.dart';
+import 'package:Kide/pages/EventsPage/widgets/EntryItem.dart';
+import 'package:Kide/providers/getEvents.dart';
+import 'package:Kide/util/constants.dart';
 import 'package:provider/provider.dart';
-import 'package:kide/config/Viewport.dart';
-import 'package:kide/widgets/HeaderWidget.dart';
+import 'package:Kide/config/Viewport.dart';
+import 'package:Kide/widgets/HeaderWidget.dart';
 
 class SubEvents extends StatefulWidget {
   static const routeName = '/subEvents';
