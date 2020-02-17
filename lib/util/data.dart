@@ -147,7 +147,7 @@ List<More> more = [
   //   color: Color(0x42000000),
   // ),
   More(
-    id: "02",
+    id: "01",
     moreName: "KISS",
     pageFormat: kiss,
     assetRoute: "lib/assets/KISS.png",
@@ -155,7 +155,7 @@ List<More> more = [
     color: Color(0x42000000),
   ),
   More(
-    id: "03",
+    id: "02",
     moreName: "KIIT",
     pageFormat: kiit,
     assetRoute: "lib/assets/KIIT.jpg",
@@ -163,7 +163,7 @@ List<More> more = [
     color: Color(0x42000000),
   ),
   More(
-    id: "04",
+    id: "03",
     moreName: "Our Founder",
     pageFormat: founderSir,
     assetRoute: "lib/assets/Founder_sir.jpeg",
@@ -555,6 +555,171 @@ List<Contact> hostelAuthorities = [
   ),
 ];
 
+
+List<Contact> cateringTeam = [
+  Contact(
+    id: "01",
+    name: "Ojas kamat tarkar",
+    designation: "Catering Head",
+    number: "9653405601",
+  ),
+  Contact(
+    id: "02",
+    name: "Success Pradhan",
+    designation: "KIIT Central Catering Area campus - 13",
+    number: "9078068313",
+  ),
+  Contact(
+    id: "03",
+    name: "Yash Yadav",
+    designation: "KIIT Central Catering Area campus - 13",
+    number: "9982247390",
+  ),
+  Contact(
+    id: "04",
+    name: "Jayesh Sharma",
+    designation: "Kalinga Stadium",
+    number: "8149422913",
+  ),
+  Contact(
+    id: "05",
+    name: "Sagar Mohapatra",
+    designation: "JLN Indoor Cuttack",
+    number: "9777119689",
+  ),
+  Contact(
+    id: "06",
+    name: "Priyabatra Mahankuda",
+    designation: "Multipurpose Sports Hall, Saheed Nagar",
+    number: "965849366",
+  ),
+];
+
+List<Contact> accomodationTeam = [
+  Contact(
+    id: "01",
+    name: "Sonia Chhabria",
+    designation: "Accomodation Head",
+    number: "8169051799",
+  ),
+  Contact(
+    id: "02",
+    name: "Amey Vaidya",
+    designation: "Male Athletes & Support Staff",
+    number: "7588773449",
+  ),
+  Contact(
+    id: "03",
+    name: "Aida Pinto",
+    designation: "Female Athletes & Support Staff",
+    number: "9930343837",
+  ),
+  Contact(
+    id: "04",
+    name: "Sandesh Mane",
+    designation: "Technical Officials, Competition Manager",
+    number: "8828468081",
+  ),
+  Contact(
+    id: "05",
+    name: "Shabnam Yasmin",
+    designation: "VIP & Dignatries",
+    number: "6003633671",
+  ),
+];
+
+
+List<Contact> transportationTeam = [
+  Contact(
+    id: "01",
+    name: "Dhruv Nakti",
+    designation: "Transportation Head",
+    number: "7977387713",
+  ),
+  Contact(
+    id: "02",
+    name: "Dasaratha Reddy",
+    designation: "Transportation Head",
+    number: "7893110879",
+  ),
+  Contact(
+    id: "03",
+    name: "Aman Kumar",
+    designation: "Bhubaneswar Railway Station",
+    number: "8862983694",
+  ),
+  Contact(
+    id: "04",
+    name: "Ayush Shastri",
+    designation: "Bhubaneswar Railway Station",
+    number: "8600104420",
+  ),
+  Contact(
+    id: "05",
+    name: "Chandan Prasad Shukar",
+    designation: "Bhubaneswar Railway Station",
+    number: "6370163695",
+  ),
+   Contact(
+    id: "06",
+    name: "Sairaj Chilap",
+    designation: "Bhubaneswar Railway Station",
+    number: "9833155059",
+  ),
+   Contact(
+    id: "07",
+    name: "Pratik Nanda",
+    designation: "Biju Patnaik International Airport",
+    number: "9777460076",
+  ),
+   Contact(
+    id: "08",
+    name: "Amrit Kumar",
+    designation: "Biju Patnaik International Airport",
+    number: "9113744606",
+  ),
+
+// CARRRY FROM HERERE -------------------------------------------------------------------------------------->
+
+   Contact(
+    id: "05",
+    name: "Chandan Prasad Shukar",
+    designation: "Bhubaneswar Railway Station",
+    number: "6370163695",
+  ),
+   Contact(
+    id: "05",
+    name: "Chandan Prasad Shukar",
+    designation: "Bhubaneswar Railway Station",
+    number: "6370163695",
+  ),
+   Contact(
+    id: "05",
+    name: "Chandan Prasad Shukar",
+    designation: "Bhubaneswar Railway Station",
+    number: "6370163695",
+  ),
+   Contact(
+    id: "05",
+    name: "Chandan Prasad Shukar",
+    designation: "Bhubaneswar Railway Station",
+    number: "6370163695",
+  ),
+   Contact(
+    id: "05",
+    name: "Chandan Prasad Shukar",
+    designation: "Bhubaneswar Railway Station",
+    number: "6370163695",
+  ),
+   Contact(
+    id: "05",
+    name: "Chandan Prasad Shukar",
+    designation: "Bhubaneswar Railway Station",
+    number: "6370163695",
+  ),
+];
+
+
 List<Contact> contactsHelpLine = [
   Contact(
     id: "01",
@@ -573,21 +738,46 @@ List<Contact> contactsHelpLine = [
 List<ContactCategory> contactCategoryList = [
   ContactCategory(
     id: "01",
+    name: "Catering Team",
+    contacts: cateringTeam
+  ),
+  ContactCategory(
+    id: "01",
+    name: "Accomodation Team",
+    contacts: accomodationTeam
+  ),
+  ContactCategory(
+    id: "01",
+    name: "Transportation Team",
+    contacts: transportationTeam
+  ),
+  ContactCategory(
+    id: "02",
     name: "Boy's Hostels",
     contacts: kpHostels
   ),
   ContactCategory(
-    id: "02",
+    id: "03",
+    name: "Boy's Hostels",
+    contacts: kpHostels
+  ),
+  ContactCategory(
+    id: "04",
+    name: "Boy's Hostels",
+    contacts: kpHostels
+  ),
+  ContactCategory(
+    id: "05",
     name: "Girl's Hostels",
     contacts: qcHostels
   ),
   ContactCategory(
-    id: "03",
+    id: "06",
     name: "Administration",
     contacts: hostelAuthorities
   ),
   ContactCategory(
-    id: "04",
+    id: "07",
     name: "Helplines",
     contacts: contactsHelpLine
   ),

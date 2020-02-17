@@ -34,6 +34,7 @@ class ContactCardDiallable extends StatelessWidget{
           children: <Widget>[
             Center(
               child: Text('$name',
+              softWrap: true,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white,
@@ -44,6 +45,7 @@ class ContactCardDiallable extends StatelessWidget{
             if(desc != null) 
               Center(
                 child: Text('$desc',
+                softWrap: true,
                 textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.grey,
@@ -53,6 +55,7 @@ class ContactCardDiallable extends StatelessWidget{
               ),
             Center(
               child: Text('$number',
+              softWrap: true,
               textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Color.fromRGBO(0, 112, 240, 100),
