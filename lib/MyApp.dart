@@ -56,7 +56,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   final List<Widget> _tabs = [
     MapsPage(),
     ContactsPage(),
@@ -94,10 +93,12 @@ class _MyHomePageState extends State<MyHomePage> {
   }
   
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final _getEvents = Provider.of<GetEvents>(context);
+    if (_getEvents.eventList.length == 0) _getEvents.setEvents();
   }
+  
   @override
   Widget build(BuildContext context) {
     
@@ -125,38 +126,127 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Flexible(
               child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    HeaderWidget("Please Tell us About Yourself!", 18, Colors.white70),
-                    DropdownButton(
-                      isExpanded: true,
-                      isDense: true,
-                      value: _getEvents.userType,
-                      icon: Icon(Icons.keyboard_arrow_down),
-                      iconSize: 24,
-                      elevation: 16,
-                      style: TextStyle(
-                        color: Colors.white70,
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      HeaderWidget("Please Tell us About Yourself!", 18, Colors.white70),
+                      Padding(
+                        padding: const EdgeInsets.all(18.0),
+                        child: DropdownButton(
+                          isExpanded: true,
+                          isDense: true,
+                          value: _getEvents.locUserType,
+                          icon: Icon(Icons.keyboard_arrow_down),
+                          iconSize: 24,
+                          elevation: 16,
+                          style: TextStyle(
+                            color: Colors.white70,
+                          ),
+                          underline: Container(
+                            height: 2,
+                            color: Color.fromRGBO(0, 112, 240, 87),
+                          ),
+                          items: [
+                            "Participant or ULO?",
+                            "Participant",
+                            "ULO"
+                          ].map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                          onChanged: (String newVal) =>
+                            _getEvents.setLocUserType(newVal)
+                              // _getEvents.setUserType(newVal),
+                        ),
                       ),
-                      underline: Container(
-                        height: 2,
-                        color: Color.fromRGBO(0, 112, 240, 87),
+                      if(_getEvents.locUserType == "Participant") 
+                        Padding(
+                          padding: const EdgeInsets.all(18.0),
+                          child: DropdownButton(
+                          isExpanded: true,
+                          isDense: true,
+                          value: _getEvents.university,
+                          icon: Icon(Icons.keyboard_arrow_down),
+                          iconSize: 24,
+                          elevation: 16,
+                          style: TextStyle(
+                            color: Colors.white70,
+                          ),
+                          underline: Container(
+                            height: 2,
+                            color: Color.fromRGBO(0, 112, 240, 87),
+                          ),
+                          items: [
+                            SELECT_YOUR_UNIVERSITY,
+                            ..._getEvents.universities
+                          ].map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                          onChanged: (String newVal) =>
+                              _getEvents.setUniversity(newVal),
+                          ),
+                        ),
+                      if(_getEvents.locUserType == "ULO") 
+                        Padding(
+                          padding: const EdgeInsets.all(18.0),
+                          child: DropdownButton(
+                            isExpanded: true,
+                            isDense: true,
+                            value: _getEvents.currentULO,
+                            icon: Icon(Icons.keyboard_arrow_down),
+                            iconSize: 24,
+                            elevation: 16,
+                            style: TextStyle(
+                              color: Colors.white70,
+                            ),
+                            underline: Container(
+                              height: 2,
+                              color: 
+                                _getEvents.currentULO == "Select Your ID" ?
+                                Colors.grey : Color.fromRGBO(0, 112, 240, 87),
+                            ),
+                            items: [
+                              "Select Your ID",
+                              ..._getEvents.uloNameList
+                            ].map<DropdownMenuItem<String>>((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
+                            onChanged: (String newVal) =>
+                              _getEvents.setCurrentULO(newVal),
+                          ),
+                        ),
+                      RaisedButton(
+                        color: 
+                          _getEvents.currentULO == "Select Your ID" &&
+                          _getEvents.university == SELECT_YOUR_UNIVERSITY
+                          ?
+                          Colors.grey : Colors.blueAccent,
+                        child: Text(
+                          "SUBMIT",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        onPressed: () =>
+                          _getEvents.currentULO == "Select Your ID" &&
+                          _getEvents.university == SELECT_YOUR_UNIVERSITY
+                          ? {} :
+                          _getEvents.setUserType(_getEvents.locUserType) 
+                        ,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        )
                       ),
-                      items: [
-                        "Participant or ULO?",
-                        "Participant",
-                        "ULO"
-                      ].map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
-                      onChanged: (String newVal) =>
-                          _getEvents.setUserType(newVal),
-                    ),
-                  ]
+                    ]
+                  ),
                 )
               )
             )

@@ -436,32 +436,62 @@ class _HomePageState extends State<HomePage> {
                   InkWell(
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(28.0, 8, 28, 8),
-                      child: DropdownButton(
-                        isExpanded: true,
-                        isDense: true,
-                        value: _getEvents.university,
-                        icon: Icon(Icons.keyboard_arrow_down),
-                        iconSize: 24,
-                        elevation: 16,
-                        style: TextStyle(
-                          color: Colors.white70,
-                        ),
-                        underline: Container(
-                          height: 2,
-                          color: Color.fromRGBO(0, 112, 240, 87),
-                        ),
-                        items: [
-                          SELECT_YOUR_UNIVERSITY,
-                          ..._getEvents.universities
-                        ].map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                        onChanged: (String newVal) =>
-                            _getEvents.setUniversity(newVal),
-                      ),
+                      child: (_getEvents.userType == "Participant") ?
+                        DropdownButton(
+                          isExpanded: true,
+                          isDense: true,
+                          value: _getEvents.university,
+                          icon: Icon(Icons.keyboard_arrow_down),
+                          iconSize: 24,
+                          elevation: 16,
+                          style: TextStyle(
+                            color: Colors.white70,
+                          ),
+                          underline: Container(
+                            height: 2,
+                            color: Color.fromRGBO(0, 112, 240, 87),
+                          ),
+                          items: [
+                            SELECT_YOUR_UNIVERSITY,
+                            ..._getEvents.universities
+                          ].map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                          onChanged: (String newVal) =>
+                              _getEvents.setUniversity(newVal),
+                        ) : DropdownButton(
+                          isExpanded: true,
+                          isDense: true,
+                          value: _getEvents.uloUniversity,
+                          icon: Icon(Icons.keyboard_arrow_down),
+                          iconSize: 24,
+                          elevation: 16,
+                          style: TextStyle(
+                            color: Colors.white70,
+                          ),
+                          underline: Container(
+                            height: 2,
+                            color: Color.fromRGBO(0, 112, 240, 87),
+                          ),
+                          items: [
+                            SELECT_YOUR_UNIVERSITY,
+                            ..._getEvents.ulo_list.firstWhere((u) {
+                              return u.name == _getEvents.currentULO;
+                            }).universities
+                          ].map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                          onChanged: (String newVal) =>
+                              _getEvents.setUloUniversity(newVal),
+                          ),
+
+
                     ),
                   ),
                   Padding(
