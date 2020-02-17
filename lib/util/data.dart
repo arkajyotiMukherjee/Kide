@@ -152,7 +152,7 @@ List<More> more = [
     pageFormat: kiss,
     assetRoute: "lib/assets/KISS.png",
     link: "https://kiss.ac.in/",
-    color: Color(0x42000000),
+    color: Color(0xFF282828),
   ),
   More(
     id: "02",
@@ -160,7 +160,7 @@ List<More> more = [
     pageFormat: kiit,
     assetRoute: "lib/assets/KIIT.jpg",
     link: "https://kiit.ac.in/",
-    color: Color(0x42000000),
+    color: Color(0xFF282828),
   ),
   More(
     id: "03",
@@ -168,7 +168,7 @@ List<More> more = [
     pageFormat: founderSir,
     assetRoute: "lib/assets/Founder_sir.jpeg",
     link: "https://achyutasamanta.com/",
-    color: Color(0x42000000),
+    color: Color(0xFF282828),
   ),
 ];
 

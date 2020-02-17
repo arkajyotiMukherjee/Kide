@@ -11,7 +11,7 @@ class CategoryCard extends StatelessWidget{
   Widget build(BuildContext context){
     return Card(
       margin: EdgeInsets.fromLTRB(5, 15, 5, 15),
-      color: Colors.black26,
+      color: Color(0xFF282828),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(8.0)
       ),

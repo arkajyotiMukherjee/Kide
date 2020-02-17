@@ -16,7 +16,7 @@ class ContactCardDiallable extends StatelessWidget{
   Widget build(BuildContext context){
    return Card(
       margin: EdgeInsets.fromLTRB(8, 20, 8, 20),
-      color: Colors.black26,
+      color: Color(0xFF282828),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(8.0)
       ),
