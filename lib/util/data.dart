@@ -125,8 +125,17 @@ MoreInfo(
   header: "A BRIEF PROFILE",
   desc: "Achyuta Samanta, after obtaining Master’s Degree in Chemistry in 1987 from Utkal University, started his career at 22 years of age. He has 30 years of teaching experience to his credit so far. \n\nProf. Samanta went on to serve KIIT  as its first Chancellor and has had the distinction of being the youngest Chancellor of any Indian University. He served University Grants Commission (UGC) as Member for two consecutive terms (2008-11 & 2011-2014) and was a Member of the Executive Committee of All Indian Council for Technical Education (AICTE). He was also member of several other Government of India bodies like, NCTE, ISTE, ISCA, COIR BOARD, CAPART and many more. He has been a Member on the Academic Council of Central University, Silchar, Assam and the Central University, Odisha. He was the first Indian to be Member of both UGC and AICTE simultaneously and the first Odia to become Member of UGC and many other statutory bodies. Currently he is the President of World Congress of Poets 2019. He has delivered nearly 100 motivational speeches, including convocation addresses and foundation day lectures, in different institutions and organizations across the country and the globe.\n\nProf. Samanta has been conferred with 33 Honoris Causa Doctorate awards from different University across the globe. He has also been decorated with prestigious Civilian Awards from many countries including, Gusi Peace Prize International, the highest Civilian Award from Bahrain besides over 50 national and international and over 200 State honors and accolades.\n\nHe is the Founder of Kalinga Institute of Industrial Technology (KIIT ) and Kalinga Institute of Social Sciences (KISS), Bhubaneswar – the fully free and fully residential tribal institute. Starting modestly with an initial seed capital of Rs 5000/-, KIIT has grown into one of the most promising Universities imparting professional education in the Country with global acclaim having 27,000 students from across the country and abroad. KIIT also runs a 2000 bedded multispecialty hospital and an attached Medical College. KISS has become the largest Residential Tribal Institute in the World and is home for 50,000 tribal children (30,000 pursing education and 20,000 passed out). Both KIIT and KISS found place in the Limca Book of Records as well as Guinness World Records in many counts.\n\nProf. Achyuta Samanta, who had lost his father at the age of four, before he could know the significance of the world, was pushed into the mire of abject poverty.  Today, he is a legend, an iconic educationist, an emblem of service to humanity, a beacon of light for social transformation, and a redeemer of the fallen, the oppressed and the marginalized. With huge contributions in the field of education, health, art, culture, literature, rural development, social service and spiritualism his journey in life is not only awe-inspiring but soul-awakening for millions of poverty-stricken youths all over the globe. He has converted the remote village ‘Kalarabank’, Cuttack into a Smart Village and the entire Manpur Panchayat into a model Panchayat (cluster of villages).\n\nHe has already started working to establish 12 branches of KISS in different districts, besides establishing KISS-Delhi for the underprivileged sections of the society. Besides providing around 10,000 direct employment in KIIT and KISS, he has created over 1,00,000 indirect employment and more than 100 successful entrepreneurs across the country. His hobby is to give happiness and smiling face to the millions of poor.\n\nProf. Samanta has been working relentlessly for Zero Poverty, Zero Hunger and Zero Illiteracy."
   ),
-
 ];
+
+
+List <MoreInfo> kIndia = [
+MoreInfo(
+  id: "01",
+  header: "About Khelo India",
+  desc: "The importance of sports and fitness in one’s life is invaluable. Playing sports inculcates team spirit, develops strategic & analytical thinking, leadership skills, goal setting and risk taking. A fit and healthy individual leads to an equally healthy society and strong nation.\n\nSports is an extremely important component for the overall development of our nation. India, in the last few years has made steady progress in the field of sports. This tremendous potential needs to be showcased at a global platform. It’s time we inspire young talent, give them top-notch infrastructure and training of the highest level. We need to inculcate a strong spirit of participation in sports that enables players to demonstrate their true potential. Only then can India realise its dream of becoming a sports super power.\n\nThe Khelo India programme has been introduced to revive the sports culture in India at the grass-root level by building a strong framework for all sports played in our country and establish India as a great sporting nation."
+  ),
+];
+
 
 List<More> more = [
   More(
@@ -134,23 +143,36 @@ List<More> more = [
     moreName: "KISS",
     pageFormat: kiss,
     assetRoute: "lib/assets/KISS.png",
-    link: "https://kiss.ac.in/"
+    link: "https://kiss.ac.in/",
+    color: Color(0x42000000),
   ),
   More(
     id: "02",
     moreName: "KIIT",
     pageFormat: kiit,
     assetRoute: "lib/assets/KIIT.jpg",
-    link: "https://kiit.ac.in/"
+    link: "https://kiit.ac.in/",
+    color: Color(0x42000000),
   ),
   More(
     id: "03",
     moreName: "Our Founder",
     pageFormat: founderSir,
     assetRoute: "lib/assets/Founder_sir.jpeg",
-    link: "https://achyutasamanta.com/"
+    link: "https://achyutasamanta.com/",
+    color: Color(0x42000000),
+  ),
+  More(
+    id: "04",
+    moreName: "Khelo India",
+    pageFormat: kIndia,
+    assetRoute: "lib/pages/HomePage/assets/KIUG_KIIT.jpg",
+    link: "https://kheloindia.gov.in/",
+    color: Color(0x42000000),
   ),
 ];
+
+// Gold - 0xFFD4A437
 
 Iterable<SubEvent> subEvents = [
   SubEvent(
