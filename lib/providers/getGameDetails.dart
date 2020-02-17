@@ -37,15 +37,14 @@ class GetGameDetails with ChangeNotifier {
           GameDetails game = GameDetails(
             name: doc.data['name'],
             food: doc.data['food'],
-            transportation: doc.data['transportation'],
-            venues: doc.data['venues'].cast<String>(),
-            accomodation: doc.data['accomodation'].cast<String>(),
+            venues: doc.data['venues'],
+            gameAccomodations: doc.data['accomodations'],
           );
           _gameDetails.add(game);
+          print(game.gameAccomodations);
           notifyListeners();
         });
       },
     );
   }
-
 }
