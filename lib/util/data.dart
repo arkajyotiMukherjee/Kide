@@ -128,24 +128,24 @@ MoreInfo(
 ];
 
 
-List <MoreInfo> kIndia = [
-MoreInfo(
-  id: "01",
-  header: "About Khelo India",
-  desc: "The importance of sports and fitness in one’s life is invaluable. Playing sports inculcates team spirit, develops strategic & analytical thinking, leadership skills, goal setting and risk taking. A fit and healthy individual leads to an equally healthy society and strong nation.\n\nSports is an extremely important component for the overall development of our nation. India, in the last few years has made steady progress in the field of sports. This tremendous potential needs to be showcased at a global platform. It’s time we inspire young talent, give them top-notch infrastructure and training of the highest level. We need to inculcate a strong spirit of participation in sports that enables players to demonstrate their true potential. Only then can India realise its dream of becoming a sports super power.\n\nThe Khelo India programme has been introduced to revive the sports culture in India at the grass-root level by building a strong framework for all sports played in our country and establish India as a great sporting nation."
-  ),
-];
+// List <MoreInfo> kIndia = [
+// MoreInfo(
+//   id: "01",
+//   header: "About Khelo India",
+//   desc: "The importance of sports and fitness in one’s life is invaluable. Playing sports inculcates team spirit, develops strategic & analytical thinking, leadership skills, goal setting and risk taking. A fit and healthy individual leads to an equally healthy society and strong nation.\n\nSports is an extremely important component for the overall development of our nation. India, in the last few years has made steady progress in the field of sports. This tremendous potential needs to be showcased at a global platform. It’s time we inspire young talent, give them top-notch infrastructure and training of the highest level. We need to inculcate a strong spirit of participation in sports that enables players to demonstrate their true potential. Only then can India realise its dream of becoming a sports super power.\n\nThe Khelo India programme has been introduced to revive the sports culture in India at the grass-root level by building a strong framework for all sports played in our country and establish India as a great sporting nation."
+//   ),
+// ];
 
 
 List<More> more = [
-   More(
-    id: "01",
-    moreName: "Khelo India",
-    pageFormat: kIndia,
-    assetRoute: "lib/pages/HomePage/assets/KIUG_KIIT.jpg",
-    link: "https://kheloindia.gov.in/",
-    color: Color(0x42000000),
-  ),
+  //  More(
+  //   id: "01",
+  //   moreName: "Khelo India",
+  //   pageFormat: kIndia,
+  //   assetRoute: "lib/pages/HomePage/assets/KIUG_KIIT.jpg",
+  //   link: "https://kheloindia.gov.in/",
+  //   color: Color(0x42000000),
+  // ),
   More(
     id: "02",
     moreName: "KISS",

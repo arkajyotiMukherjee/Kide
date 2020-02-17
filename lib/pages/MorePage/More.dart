@@ -25,6 +25,24 @@ class MorePage extends StatelessWidget {
                       margin: EdgeInsets.fromLTRB(5, 15, 5, 15),
                       shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0)),
+                      color: Color(0x42000000),
+                      child: InkWell(
+                        child: Center(
+                          child: Text("Khelo India",
+                            style: TextStyle(
+                              color: Colors.white
+                            ),
+                          ),
+                        ),
+                        onTap: () => {
+                          launch("https://kheloindia.gov.in/")
+                        },
+                      ),
+                    ),
+                    Card(
+                      margin: EdgeInsets.fromLTRB(5, 15, 5, 15),
+                      shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0)),
                       color: Color(0xFFD4A437),
                       child: InkWell(
                         child: Center(
