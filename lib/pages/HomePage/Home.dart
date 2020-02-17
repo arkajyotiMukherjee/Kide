@@ -1,3 +1,4 @@
+import 'package:Kide/providers/getGameDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:Kide/config/Viewport.dart';
 import 'package:Kide/pages/MapsPage/Maps.dart';
@@ -367,6 +368,10 @@ class _HomePageState extends State<HomePage> {
     
     final _getEvents = Provider.of<GetEvents>(context);
     if (_getEvents.eventList.length == 0) _getEvents.setEvents();
+
+    // Get Game details
+    final _getGameDetails = Provider.of<GetGameDetails>(context);
+    if (_getGameDetails.gameDetails.length == 0) _getGameDetails.setGameDetails();
   }
 
   @override
@@ -383,7 +388,6 @@ class _HomePageState extends State<HomePage> {
 
     // Events Listener
     final _getEvents = Provider.of<GetEvents>(context);
-    //for Events
 
     ViewPort().init(context);
 
