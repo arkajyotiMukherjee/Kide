@@ -111,75 +111,51 @@ class _SubEventsState extends State<SubEvents> {
           ),
         ),
       ),
-      body: Column(
-        children: <Widget>[
-          Container(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Center(
-                    child: HeaderWidget(
-                        _getGameDetails.gameDetails
-                            .elementAt(1)
-                            .name
-                            .toUpperCase(),
-                        32,
-                        Colors.white),
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Text('Food Venue',
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                      Spacer(),
-                      _buildRaisedButton(QUENCH_YOUR_HUNGER,
-                          _getGameDetails.gameDetails.elementAt(1).food)
-                    ],
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Text('Transportation',
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                      Spacer(),
-                      _buildRaisedButton(QUENCH_YOUR_HUNGER,
-                          _getGameDetails.gameDetails.elementAt(1).food)
-                    ],
-                  ),
-                  Text('Accomodations',
-                      style: TextStyle(fontWeight: FontWeight.bold)),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 32.0),
-                    child: _listItemBuilder(
-                      _getGameDetails.gameDetails
-                          .elementAt(1)
-                          .gameAccomodations,
-                    ),
-                  ),
-                  Text('Game Venues',
-                      style: TextStyle(fontWeight: FontWeight.bold)),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 32.0),
-                    child: _listItemBuilder(
-                      _getGameDetails.gameDetails.elementAt(1).venues,
-                    ),
-                  )
-                ],
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
+        child: ListView(
+          children: <Widget>[
+            Center(
+              child: HeaderWidget(
+                  _getGameDetails.gameDetails.elementAt(1).name.toUpperCase(),
+                  32,
+                  Colors.white),
+            ),
+            Row(
+              children: <Widget>[
+                Text('Food Venue', style: TextStyle(fontWeight: FontWeight.bold)),
+                Spacer(),
+                _buildRaisedButton(QUENCH_YOUR_HUNGER,
+                    _getGameDetails.gameDetails.elementAt(1).food)
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Text('Transportation',
+                    style: TextStyle(fontWeight: FontWeight.bold)),
+                Spacer(),
+                _buildRaisedButton(QUENCH_YOUR_HUNGER,
+                    _getGameDetails.gameDetails.elementAt(1).food)
+              ],
+            ),
+            Text('Accomodations', style: TextStyle(fontWeight: FontWeight.bold)),
+            Padding(
+              padding: const EdgeInsets.only(left: 32.0),
+              child: _listItemBuilder(
+                _getGameDetails.gameDetails.elementAt(1).gameAccomodations,
               ),
             ),
-          ),
-          Expanded(
-            child: Container(
-              height: 500,
-              child: ListView.builder(
-                itemBuilder: (BuildContext context, int index) =>
-                    EntryItem(_subEventList.elementAt(index)),
-                itemCount: _subEventList.length,
-                padding: const EdgeInsets.fromLTRB(8.0, 16.0, 8.0, 16.0),
+            Text('Game Venues', style: TextStyle(fontWeight: FontWeight.bold)),
+            Padding(
+              padding: const EdgeInsets.only(left: 32.0),
+              child: _listItemBuilder(
+                _getGameDetails.gameDetails.elementAt(1).venues,
               ),
             ),
-          ),
-        ],
+            for (int i = 0; i < _subEventList.length; i++)
+              EntryItem(_subEventList.elementAt(i)),
+          ],
+        ),
       ),
       backgroundColor: Color.fromRGBO(18, 18, 18, 1.0),
     );
