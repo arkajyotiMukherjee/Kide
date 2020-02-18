@@ -299,11 +299,10 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  
   @override
   void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
     super.didChangeDependencies();
-
     final _getEvents = Provider.of<GetEvents>(context);
     if (_getEvents.eventList.length == 0) _getEvents.setEvents();
 
@@ -313,6 +312,10 @@ class _HomePageState extends State<HomePage> {
       _getGameDetails.setGameDetails();
   }
 
+  @override
+  void initState() {
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     // Markers Listner
@@ -379,32 +382,60 @@ class _HomePageState extends State<HomePage> {
                   InkWell(
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(28.0, 8, 28, 8),
-                      child: DropdownButton(
-                        isExpanded: true,
-                        isDense: true,
-                        value: _getEvents.university,
-                        icon: Icon(Icons.keyboard_arrow_down),
-                        iconSize: 24,
-                        elevation: 16,
-                        style: TextStyle(
-                          color: Colors.white70,
-                        ),
-                        underline: Container(
-                          height: 2,
-                          color: Color.fromRGBO(0, 112, 240, 87),
-                        ),
-                        items: [
-                          SELECT_YOUR_UNIVERSITY,
-                          ..._getEvents.universities
-                        ].map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                        onChanged: (String newVal) =>
-                            _getEvents.setUniversity(newVal),
-                      ),
+                      child: (_getEvents.userType == "Participant") ?
+                        DropdownButton(
+                          isExpanded: true,
+                          isDense: true,
+                          value: _getEvents.university,
+                          icon: Icon(Icons.keyboard_arrow_down),
+                          iconSize: 24,
+                          elevation: 16,
+                          style: TextStyle(
+                            color: Colors.white70,
+                          ),
+                          underline: Container(
+                            height: 2,
+                            color: Color.fromRGBO(0, 112, 240, 87),
+                          ),
+                          items: [
+                            SELECT_YOUR_UNIVERSITY,
+                            ..._getEvents.universities
+                          ].map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                          onChanged: (String newVal) =>
+                              _getEvents.setUniversity(newVal),
+                        ) : DropdownButton(
+                          isExpanded: true,
+                          isDense: true,
+                          value: _getEvents.uloUniversity,
+                          icon: Icon(Icons.keyboard_arrow_down),
+                          iconSize: 24,
+                          elevation: 16,
+                          style: TextStyle(
+                            color: Colors.white70,
+                          ),
+                          underline: Container(
+                            height: 2,
+                            color: Color.fromRGBO(0, 112, 240, 87),
+                          ),
+                          items: [
+                            SELECT_YOUR_UNIVERSITY,
+                            ..._getEvents.ulo_list.firstWhere((u) {
+                              return u.name == _getEvents.currentULO;
+                            }).universities
+                          ].map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                          onChanged: (String newVal) =>
+                              _getEvents.setUloUniversity(newVal),
+                          ),
                     ),
                   ),
                   Padding(
@@ -428,6 +459,7 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(20),
                         )),
                   ),
+                  (_getEvents.userType == "Participant") ?
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
@@ -680,8 +712,32 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
+                  ) 
+                  : Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "Information for ULOs",
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                        Divider(
+                          color: Colors.white,
+                          endIndent: ViewPort.screenWidth * 0.33,
+                        ),
+                      ]
+                    )
                   )
-                ])))
+                ]
+              )
+            )
+          )
         : CircularProgressIndicator();
   }
 }
