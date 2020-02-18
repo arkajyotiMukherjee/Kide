@@ -63,7 +63,14 @@ class _MyHomePageState extends State<MyHomePage> {
     EventsPage(),
     MorePage(),
   ];
-
+  final List<Widget> _uloTabs = [
+    MapsPage(),
+    ContactsPage(),
+    HomePage(),
+    EventsPage(),
+    MorePage(),
+  ];
+  
   final List<String> _tabNames = [
     MAPS,
     CONTACTS,

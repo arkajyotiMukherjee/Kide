@@ -490,8 +490,6 @@ class _HomePageState extends State<HomePage> {
                           onChanged: (String newVal) =>
                               _getEvents.setUloUniversity(newVal),
                           ),
-
-
                     ),
                   ),
                   Padding(
@@ -515,6 +513,7 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(20),
                         )),
                   ),
+                  (_getEvents.userType == "Participant") ?
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
@@ -767,8 +766,32 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
+                  ) 
+                  : Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "Information for ULOs",
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                        Divider(
+                          color: Colors.white,
+                          endIndent: ViewPort.screenWidth * 0.33,
+                        ),
+                      ]
+                    )
                   )
-                ])))
+                ]
+              )
+            )
+          )
         : CircularProgressIndicator();
   }
 }
