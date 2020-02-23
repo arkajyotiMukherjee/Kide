@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kide/models/ContactCategory.dart';
-import 'package:kide/pages/ContactsPage/ContactList.dart';
+import 'package:Kide/models/ContactCategory.dart';
+import 'package:Kide/pages/ContactsPage/ContactList.dart';
 
 
 class CategoryCard extends StatelessWidget{
@@ -11,7 +11,7 @@ class CategoryCard extends StatelessWidget{
   Widget build(BuildContext context){
     return Card(
       margin: EdgeInsets.fromLTRB(5, 15, 5, 15),
-      color: Colors.black26,
+      color: Color(0xFF282828),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(8.0)
       ),
@@ -25,6 +25,8 @@ class CategoryCard extends StatelessWidget{
         },
       child: Center(
         child: Text(contactCategory.name,
+          textAlign: TextAlign.center,
+          //overflow: TextOverflow.fade,
           style: TextStyle(
             color: Colors.white,
             fontSize: 15.0
